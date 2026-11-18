@@ -38,6 +38,7 @@ Y abrir <http://localhost:8080>. Para otro idioma: `?lang=ca` (mallorquí), `?la
   añade esa clave en `js/i18n.js` en mallorquí, inglés y alemán.
 - **Horario**: la tabla de `index.html` y, en `js/main.js`, `OPEN_DAYS` (0 = domingo) y `OPEN_HOUR`.
 - **Fotos**: van en `img/fotos/`, con un `.webp` y un `.jpg` de cada una.
+- **Después de cambiar CSS o JS**: sube el número de versión en `index.html` (`styles.css?v=5` → `?v=6`, igual en `main.js`, `i18n.js` y `fonts.css`), para que los navegadores no usen la copia vieja.
 
 ## Antes de publicar: datos a confirmar con el local
 

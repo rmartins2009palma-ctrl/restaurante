@@ -151,6 +151,8 @@ Para que las fotos no parezcan recortes pegados:
   Con el ratón, zoom lento dentro de la foto.
 - **Arco de la portada**: piedra más fina, con luz arriba. Al cargar, la foto sube desde abajo sobre un interior oscuro
   y la tabla redonda entra girando.
-- **Al hacer scroll**: solo las fotos de la carta se posan sobre el papel.
+- **Al hacer scroll**: todas las fotos aparecen subiendo suavemente y se asientan (la carta, la bodega y la terraza).
+- **Caché**: GitHub Pages deja que el navegador guarde CSS y JS 10 minutos. Para que nunca se mezcle una página nueva
+  con estilos viejos, los archivos llevan versión (`styles.css?v=5`). **Al cambiar CSS o JS, sube el número.**
 - **Accesibilidad**: con «reducir movimiento» o sin JavaScript no hay animaciones y todas las fotos se ven desde el principio.
   Si `main.js` no cargara, a los 3 s se muestra todo igualmente.
