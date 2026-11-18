@@ -165,3 +165,12 @@ y cansaba la vista (efecto de vibración por el alto contraste). Ahora:
   con el motivo un 50 % más grande, como un damasco.
 - Un **viñeteado** oscurece los laterales y deja la carta en el centro.
 - La tela clásica roja y blanca queda solo como **dobladillo** de 10 px arriba y abajo del mantel, y en el pie.
+
+## 7. Transiciones entre secciones (18/11/2026)
+
+Los fondos de sección son **lisos** (sin texturas nuevas). Para evitar cortes secos:
+- **Entre tonos parecidos, fundido suave** en el borde inferior de la sección, con curva de entrada y salida
+  y mezcla perceptual (`color-mix(in oklab, …)`): sopars (granate) → bodega, terraza → opiniones, opiniones → persiana.
+  Las lamas de la persiana aparecen poco a poco. Se añade espacio abajo para que el texto no quede sobre el degradado.
+- **Entre oscuro y claro, el dobladillo** de roba de llengües (10 px): portada → carta, carta → sopars,
+  bodega → terraza y persiana → pie.

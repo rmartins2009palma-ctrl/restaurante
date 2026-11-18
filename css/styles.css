@@ -260,14 +260,16 @@ picture { display: block; }
 }
 /* el dobladillo: una franja fina de la tela clásica, roja y blanca, arriba y abajo */
 .mantel::before,
-.mantel::after {
+.mantel::after,
+.celler::after {
   content: "";
   position: absolute; left: 0; right: 0;
   height: 10px;
   background: url("../img/llengues.svg") 0 -83px / 64px 176px repeat-x;
 }
 .mantel::before { top: 0; }
-.mantel::after { bottom: 0; }
+.mantel::after,
+.celler::after { bottom: 0; }
 
 .carta {
   max-width: 62rem;
@@ -304,7 +306,7 @@ picture { display: block; }
 .carta-foot { text-align: center; font-size: var(--t-sm); color: var(--vi-suau); margin: 1.5rem 0 0; padding-top: 1.5rem; border-top: 1px solid color-mix(in srgb, var(--vi) 20%, transparent); }
 
 /* -------- Sopars de grup ---------------------------------------------- */
-.grups { background: var(--grana-fosc); color: var(--cal); padding-block: clamp(4rem, 9vw, 6.5rem); }
+.grups { --bg: var(--grana-fosc); --next: var(--vi); --pad: clamp(4rem, 9vw, 6.5rem); color: var(--cal); padding-block: var(--pad); }
 .grups-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
@@ -339,7 +341,7 @@ picture { display: block; }
 .price-per { font-weight: 700; margin-top: 0.35rem; }
 
 /* -------- Es celler --------------------------------------------------- */
-.celler { background: var(--vi); color: var(--cal); padding-block: clamp(4rem, 9vw, 7rem); }
+.celler { position: relative; background: var(--vi); color: var(--cal); padding-block: clamp(4rem, 9vw, 7rem); }
 .celler-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -351,7 +353,7 @@ picture { display: block; }
 .celler-copy .btn { margin-top: 0.5rem; }
 
 /* -------- Sa terrasseta ----------------------------------------------- */
-.terrassa { padding-block: clamp(4rem, 9vw, 7rem); }
+.terrassa { --bg: var(--mares); --next: var(--mares-fosc); --pad: clamp(4rem, 9vw, 7rem); padding-block: var(--pad); }
 .terrassa-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
@@ -362,7 +364,7 @@ picture { display: block; }
 .terrassa-quote { font-family: var(--f-display); font-size: clamp(2rem, 4vw, 2.75rem); color: var(--grana); margin: 0; }
 
 /* -------- Opiniones --------------------------------------------------- */
-.opiniones { padding-block: clamp(3.5rem, 8vw, 6rem); background: var(--mares-fosc); }
+.opiniones { --bg: var(--mares-fosc); --next: var(--persiana); --pad: clamp(3.5rem, 8vw, 6rem); padding-block: var(--pad); }
 .op-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1fr);
@@ -378,11 +380,34 @@ picture { display: block; }
 .quote p { font-family: var(--f-display); font-size: 1.35rem; line-height: 1.35; margin-bottom: 0.6em; }
 .quote figcaption { color: var(--vi-suau); font-style: italic; }
 
+/* -------- Transiciones entre secciones -------------------------------- */
+/* Regla: entre tonos parecidos, fundido suave; entre oscuro y claro,
+   el dobladillo de roba de llengües (portada → carta, bodega → terraza, pie).
+   Los fondos son lisos; solo el borde inferior de cada sección se funde,
+   con una curva suave, en el color de la siguiente.
+   El espacio extra de abajo evita que el texto quede sobre el degradado. */
+.grups, .terrassa, .opiniones {
+  --fade: clamp(90px, 12vw, 180px);
+  padding-bottom: calc(var(--pad) + var(--fade) * 0.7);
+  background-color: var(--bg);
+  /* navegadores antiguos: degradado simple */
+  background-image: linear-gradient(to bottom, var(--bg) calc(100% - var(--fade)), var(--next));
+  /* navegadores actuales: mezcla perceptual (oklab) con curva de entrada y salida */
+  background-image: linear-gradient(to bottom,
+    var(--bg) calc(100% - var(--fade)),
+    color-mix(in oklab, var(--bg) 92%, var(--next)) calc(100% - var(--fade) * 0.78),
+    color-mix(in oklab, var(--bg) 70%, var(--next)) calc(100% - var(--fade) * 0.55),
+    color-mix(in oklab, var(--bg) 35%, var(--next)) calc(100% - var(--fade) * 0.3),
+    color-mix(in oklab, var(--bg) 10%, var(--next)) calc(100% - var(--fade) * 0.1),
+    var(--next) 100%);
+}
+
 /* -------- Vine a veure'ns: persiana verde ----------------------------- */
 .visita {
   color: var(--cal);
   padding-block: clamp(4rem, 9vw, 7rem);
   background:
+    linear-gradient(to bottom, var(--persiana) 0, rgba(47, 86, 66, 0) clamp(80px, 10vw, 150px)),
     repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.13) 0 3px, rgba(255, 255, 255, 0.03) 3px 5px, transparent 5px 22px),
     var(--persiana);
 }
