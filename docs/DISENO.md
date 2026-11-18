@@ -213,3 +213,15 @@ nunca comparten color ni se parecen (lo que antes quedaba feo era juntar tonos p
 | Pie | vino `#2B1216` |
 
 Textos, botones, líneas y el foco del teclado se adaptan al fondo de cada sección.
+
+## 11. Carta rediseñada (18/11/2026)
+
+La carta tenía mucho espacio vacío (columna estrecha de foto a la izquierda y lista alineada a la izquierda).
+Ahora es **centrada, como una carta impresa**, y más compacta (de ~3.000 a ~2.360 px de alto en escritorio):
+- **Llonguets primero y destacados**: foto con paspartú, título grande, «S'especialitat de sa casa»
+  y los cuatro llonguets en dos columnas.
+- **Per picar y Ses taules** uno al lado del otro, separados por una línea fina; cada uno encabezado por su foto
+  en un **plato redondo** (como la tabla de la portada), que entra girando al aparecer.
+- **Ses postres** centrado al final, con su plato redondo.
+- Títulos más grandes en granate con una línea corta debajo; sin líneas punteadas entre platos.
+- En tablet y móvil, una sola columna centrada.
