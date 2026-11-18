@@ -184,3 +184,14 @@ A petición del cliente, **todos los fondos son lisos** y se quitan las franjas 
   (la tabla redonda en la portada; la foto de la terraza sube sobre la bodega en pantallas anchas).
 - **Tonos parecidos**: fundido suave (sopars → bodega, terraza → opiniones, opiniones → persiana, persiana → pie).
 - Se eliminan `img/llengues.svg` e `img/llengues-suau.svg`; el generador sigue en `tools/llengues.py`.
+
+## 9. Revisión completa (18/11/2026)
+
+Revisado en 1920, 1440, 1366, 1024, 768 y 390 px.
+- **Sin degradados entre secciones** (quedaban turbios: arena → verde daba una franja oliva).
+  La página son **4 bandas lisas**: arena (portada) · granate (carta, sopars, bodega) · arena (terraza, opiniones) ·
+  verde (horario y pie). Dentro de cada banda, las secciones se separan con una **línea finísima**;
+  entre bandas, **borde limpio** entre colores muy distintos. La persiana verde ya no lleva lamas.
+- **Terraza**: el texto queda centrado exactamente con la foto (el pie de foto cuelga debajo y no cuenta para centrar)
+  y desaparece el hueco grande que había debajo.
+- **Fotos**: fuera el viñeteado interior, que ensuciaba los bordes; queda solo un velo cálido muy ligero.

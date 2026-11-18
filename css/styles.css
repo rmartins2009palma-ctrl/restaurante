@@ -288,7 +288,10 @@ picture { display: block; }
 .carta-foot { text-align: center; font-size: var(--t-sm); color: var(--vi-suau); margin: 1.5rem 0 0; padding-top: 1.5rem; border-top: 1px solid color-mix(in srgb, var(--vi) 20%, transparent); }
 
 /* -------- Sopars de grup ---------------------------------------------- */
-.grups { --bg: var(--grana-fosc); --next: var(--vi); --pad: clamp(4rem, 9vw, 6.5rem); color: var(--cal); padding-block: var(--pad); }
+/* Bandas de color lisas y sin degradados:
+   arena (portada) · granate (carta, sopars, bodega) · arena (terraza, opiniones) · verde (horario, pie).
+   Dentro de una banda, las secciones se separan con una línea finísima. */
+.grups { background: var(--grana-fosc); color: var(--cal); padding-block: clamp(4rem, 9vw, 6.5rem); }
 .grups-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
@@ -323,8 +326,10 @@ picture { display: block; }
 .price-per { font-weight: 700; margin-top: 0.35rem; }
 
 /* -------- Es celler --------------------------------------------------- */
-.celler { background: var(--vi); color: var(--cal); padding-block: clamp(4rem, 9vw, 7rem); }
+.celler { background: var(--grana-fosc); color: var(--cal); padding-bottom: clamp(4rem, 9vw, 7rem); }
 .celler-grid {
+  border-top: 1px solid color-mix(in srgb, var(--cal) 18%, transparent);
+  padding-top: clamp(4rem, 9vw, 6.5rem);
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   gap: clamp(2rem, 5vw, 4.5rem);
@@ -335,26 +340,23 @@ picture { display: block; }
 .celler-copy .btn { margin-top: 0.5rem; }
 
 /* -------- Sa terrasseta ----------------------------------------------- */
-.terrassa { --bg: var(--mares); --next: var(--mares-fosc); --pad: clamp(4rem, 9vw, 7rem); padding-block: var(--pad); }
+.terrassa { background: var(--mares); padding-block: clamp(4rem, 9vw, 7rem) clamp(4rem, 8vw, 6rem); }
 .terrassa-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
-/* Entre la bodega (oscura) y la terraza (clara) no hay fundido: el borde es limpio
-   y la foto de la terraza sube y lo pisa, como la tabla redonda en la portada */
-@media (min-width: 52.01rem) {
-  .terrassa { padding-top: clamp(2.5rem, 4vw, 3.5rem); }
-  .terrassa-grid { align-items: start; }
-  .terrassa-foto { margin-top: calc(-1 * clamp(5rem, 9vw, 8rem)); }
-  .terrassa-copy { align-self: center; }
-}
+
 .terrassa-copy .section-lead { color: var(--vi-suau); }
 .terrassa-quote { font-family: var(--f-display); font-size: clamp(2rem, 4vw, 2.75rem); color: var(--grana); margin: 0; }
 
 /* -------- Opiniones --------------------------------------------------- */
-.opiniones { --bg: var(--mares-fosc); --next: var(--persiana); --pad: clamp(3.5rem, 8vw, 6rem); padding-block: var(--pad); }
+.opiniones { background: var(--mares); padding-bottom: clamp(4rem, 9vw, 6.5rem); }
+.opiniones > .wrap {
+  border-top: 1px solid color-mix(in srgb, var(--vi) 16%, transparent);
+  padding-top: clamp(3.5rem, 8vw, 5.5rem);
+}
 .op-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1fr);
@@ -370,46 +372,11 @@ picture { display: block; }
 .quote p { font-family: var(--f-display); font-size: 1.35rem; line-height: 1.35; margin-bottom: 0.6em; }
 .quote figcaption { color: var(--vi-suau); font-style: italic; }
 
-/* -------- Transiciones entre secciones -------------------------------- */
-/* Regla: entre tonos parecidos, fundido suave; entre oscuro y claro,
-   borde limpio con una foto que lo pisa (portada → carta, bodega → terraza).
-   Los fondos son lisos; solo el borde inferior de cada sección se funde,
-   con una curva suave, en el color de la siguiente.
-   El espacio extra de abajo evita que el texto quede sobre el degradado. */
-.grups, .terrassa, .opiniones {
-  --fade: clamp(90px, 12vw, 180px);
-  padding-bottom: calc(var(--pad) + var(--fade) * 0.7);
-  background-color: var(--bg);
-  /* navegadores antiguos: degradado simple */
-  background-image: linear-gradient(to bottom, var(--bg) calc(100% - var(--fade)), var(--next));
-  /* navegadores actuales: mezcla perceptual (oklab) con curva de entrada y salida */
-  background-image: linear-gradient(to bottom,
-    var(--bg) calc(100% - var(--fade)),
-    color-mix(in oklab, var(--bg) 92%, var(--next)) calc(100% - var(--fade) * 0.78),
-    color-mix(in oklab, var(--bg) 70%, var(--next)) calc(100% - var(--fade) * 0.55),
-    color-mix(in oklab, var(--bg) 35%, var(--next)) calc(100% - var(--fade) * 0.3),
-    color-mix(in oklab, var(--bg) 10%, var(--next)) calc(100% - var(--fade) * 0.1),
-    var(--next) 100%);
-}
-
 /* -------- Vine a veure'ns: persiana verde ----------------------------- */
 .visita {
-  --fade: clamp(90px, 12vw, 180px);
   color: var(--cal);
-  padding-block: clamp(4rem, 9vw, 7rem) calc(clamp(4rem, 9vw, 7rem) + var(--fade) * 0.7);
-  background:
-    /* al final, fundido suave hacia el pie */
-    linear-gradient(to bottom,
-      rgba(43, 18, 22, 0) calc(100% - var(--fade)),
-      rgba(43, 18, 22, 0.08) calc(100% - var(--fade) * 0.78),
-      rgba(43, 18, 22, 0.3) calc(100% - var(--fade) * 0.55),
-      rgba(43, 18, 22, 0.65) calc(100% - var(--fade) * 0.3),
-      rgba(43, 18, 22, 0.9) calc(100% - var(--fade) * 0.1),
-      var(--vi) 100%),
-    /* al principio, las lamas aparecen poco a poco */
-    linear-gradient(to bottom, var(--persiana) 0, rgba(47, 86, 66, 0) clamp(80px, 10vw, 150px)),
-    repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.13) 0 3px, rgba(255, 255, 255, 0.03) 3px 5px, transparent 5px 22px),
-    var(--persiana);
+  background: var(--persiana);
+  padding-block: clamp(4rem, 9vw, 7rem) clamp(3.5rem, 7vw, 5rem);
 }
 .visita-grid {
   display: grid;
@@ -453,10 +420,14 @@ address a { font-weight: 700; }
 /* -------- Pie ---------------------------------------------------------- */
 .site-footer {
   color: var(--cal);
-  padding-block: 2.5rem calc(2.5rem + env(safe-area-inset-bottom));
-  background: var(--vi);
+  padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
+  background: var(--persiana);
 }
-.footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+.footer-row {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
+  border-top: 1px solid color-mix(in srgb, var(--cal) 18%, transparent);
+  padding-top: 2.5rem;
+}
 .footer-logo { height: 4.2rem; width: auto; }
 .social { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }
 .social a { font-weight: 500; }
@@ -467,8 +438,9 @@ address a { font-weight: 700; }
    FOTOS: acabado común, marcos y animaciones
    ========================================================================= */
 
-/* Acabado común: fondo del color de la foto mientras carga, filo de luz,
-   viñeteado suave y un velo cálido que unifica fotos de origen distinto */
+/* Acabado común: fondo del color de la foto mientras carga y un velo cálido
+   muy ligero que unifica fotos de origen distinto. Sin viñeteado: los bordes
+   quedan nítidos. */
 .foto { position: relative; }
 .foto picture {
   position: relative;
@@ -482,17 +454,9 @@ address a { font-weight: 700; }
 .taula-redona picture::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   border-radius: inherit;
-  background: linear-gradient(160deg, rgba(255, 210, 150, 0.22), rgba(110, 14, 25, 0.16));
+  background: linear-gradient(160deg, rgba(255, 210, 150, 0.12), rgba(110, 14, 25, 0.08));
   mix-blend-mode: soft-light;
 }
-.foto picture::after,
-.arc picture::after,
-.taula-redona picture::after {
-  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16), inset 0 0 80px rgba(30, 10, 8, 0.3);
-}
-.taula-redona picture::after { box-shadow: inset 0 0 40px rgba(30, 10, 8, 0.35); }
 
 /* Copias sobre el papel de la carta: paspartú, pie de foto y un leve giro a mano */
 .foto-mat {
@@ -524,9 +488,8 @@ address a { font-weight: 700; }
   transition: transform 1.1s var(--ease-out), opacity 0.9s ease;
 }
 .foto-marc picture { box-shadow: 0 34px 60px -34px rgba(0, 0, 0, 0.75); }
-.foto-marc picture::after { box-shadow: inset 0 0 80px rgba(30, 10, 8, 0.3); }
 .foto-marc figcaption {
-  margin-top: 1rem;
+  position: absolute; left: 0; top: calc(100% + 0.9rem);
   font-style: italic;
   font-size: 0.98rem;
   opacity: 0.78;
