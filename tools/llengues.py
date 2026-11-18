@@ -1,6 +1,11 @@
-"""Genera el patrón SVG de roba de llengües (ikat mallorquín). Uso: python3 tools/llengues.py img/llengues.svg"""
+"""Genera el patrón SVG de roba de llengües (ikat mallorquín).
+Uso:
+  python3 tools/llengues.py img/llengues.svg            rojo y blanco (franja del pie)
+  python3 tools/llengues.py img/llengues-suau.svg suau  granate tono sobre tono (mantel de la carta)
+"""
 import math, random, sys
 out = sys.argv[1]
+paleta = sys.argv[2] if len(sys.argv) > 2 else "clar"
 W, H = 64, 176          # tamaño de la tesela
 STEP = 4                # alto de cada "hilo"
 rnd = random.Random(7)
@@ -29,11 +34,17 @@ def flame(cx, cy, half_w, half_h, jitter):
         pts.append((x, y))
     return 'M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in pts) + 'Z'
 
-C = dict(fons='#F6EFE2', grana='#9E1221', vi='#5A0D18', rosa='#D2606F')
+PALETES = {
+    # contraste alto: rojo sobre blanco, como la tela clásica
+    'clar': dict(fons='#F6EFE2', grana='#9E1221', mig='#F6EFE2', rosa='#D2606F', vi='#5A0D18'),
+    # tono sobre tono: granate sobre granate, para superficies grandes (no «raya» la vista)
+    'suau': dict(fons='#64101A', grana='#741521', mig='#6A111C', rosa='#7F1B27', vi='#5A0D17'),
+}
+C = PALETES[paleta]
 paths = []
 for cx, cy in [(W/2, H/2), (0, 0), (W, 0), (0, H), (W, H)]:
     paths.append((C['grana'], flame(cx, cy, 20, 88, 2.6)))
-    paths.append((C['fons'], flame(cx, cy, 12.5, 64, 2.0)))
+    paths.append((C['mig'], flame(cx, cy, 12.5, 64, 2.0)))
     paths.append((C['rosa'], flame(cx, cy, 8.5, 50, 1.6)))
     paths.append((C['vi'], flame(cx, cy, 3.5, 32, 1.0)))
 svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',

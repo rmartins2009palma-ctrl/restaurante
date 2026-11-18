@@ -156,3 +156,12 @@ Para que las fotos no parezcan recortes pegados:
   con estilos viejos, los archivos llevan versión (`styles.css?v=5`). **Al cambiar CSS o JS, sube el número.**
 - **Accesibilidad**: con «reducir movimiento» o sin JavaScript no hay animaciones y todas las fotos se ven desde el principio.
   Si `main.js` no cargara, a los 3 s se muestra todo igualmente.
+
+## 6. Mantel tono sobre tono (18/11/2026)
+
+En pantallas grandes, la roba de llengües roja y blanca ocupaba mucha superficie a los lados de la carta
+y cansaba la vista (efecto de vibración por el alto contraste). Ahora:
+- El mantel usa **la misma tela en granate sobre granate** (`img/llengues-suau.svg`, paleta `suau` de `tools/llengues.py`),
+  con el motivo un 50 % más grande, como un damasco.
+- Un **viñeteado** oscurece los laterales y deja la carta en el centro.
+- La tela clásica roja y blanca queda solo como **dobladillo** de 10 px arriba y abajo del mantel, y en el pie.
