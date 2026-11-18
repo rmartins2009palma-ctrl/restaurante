@@ -1,0 +1,485 @@
+/* =========================================================================
+   Es Racó de Son Verí: hoja de estilos
+   Concepto: «la taula parada». Marès, mantel de llengües, cajas de vino
+   y persiana verde mallorquina. Ver docs/DISENO.md
+   ========================================================================= */
+
+:root {
+  /* Color: sacado del propio local */
+  --mares: #E5CD9E;        /* arenisca de los arcos */
+  --mares-fosc: #D2B47C;
+  --cal: #F6EFE2;          /* papel de la carta, cal blanca */
+  --vi: #2B1216;           /* tinta y bodega */
+  --vi-suau: #5A3A31;      /* texto secundario */
+  --grana: #A3182F;        /* roba de llengües */
+  --grana-fosc: #7E1024;
+  --persiana: #2F5642;     /* persianas mallorquinas */
+  --fucsia: #C21E6B;       /* el «es» del logo */
+  --fusta: #C69862;        /* cajas de vino */
+
+  /* Tipografía */
+  --f-display: 'Young Serif', 'Iowan Old Style', Georgia, serif;
+  --f-text: 'Alegreya Sans', 'Gill Sans', 'Segoe UI', system-ui, sans-serif;
+
+  /* Escala 1,25 sobre 18 px */
+  --t-sm: 0.9rem;
+  --t-base: 1.125rem;
+  --t-md: 1.4rem;
+  --t-lg: 1.75rem;
+  --t-xl: clamp(2rem, 4.2vw, 2.75rem);
+  --t-hero: clamp(2.5rem, 5.6vw, 4.25rem);
+
+  --wrap: 72rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --header-h: 4.25rem;
+  --radius: 6px;
+}
+
+/* -------- Base -------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--mares);
+  color: var(--vi);
+  font-family: var(--f-text);
+  font-size: var(--t-base);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(163, 24, 47, 0.15);
+  touch-action: manipulation;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+h2 { font-size: var(--t-xl); }
+h3 { font-size: var(--t-md); }
+p { margin: 0 0 1em; text-wrap: pretty; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 3px solid var(--grana);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  background: var(--vi); color: var(--cal);
+  padding: 0.6rem 1rem; border-radius: var(--radius);
+}
+.skip:focus { top: 1rem; }
+
+/* -------- Botones ----------------------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 2.9rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font: 700 1rem/1.1 var(--f-text);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.btn-primary { background: var(--grana); color: var(--cal); }
+.btn-primary:hover { background: var(--grana-fosc); }
+.btn-ghost { border-color: var(--vi); color: var(--vi); }
+.btn-ghost:hover { background: var(--vi); color: var(--mares); }
+.btn-light { background: var(--cal); color: var(--persiana); }
+.btn-light:hover { background: #fff; }
+.btn-outline-light { border-color: var(--cal); color: var(--cal); }
+.btn-outline-light:hover { background: var(--cal); color: var(--persiana); }
+
+/* -------- Cabecera ---------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--mares) 94%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid color-mix(in srgb, var(--vi) 12%, transparent);
+}
+.header-row {
+  display: flex; align-items: center; gap: 1.5rem;
+  min-height: var(--header-h);
+}
+
+.logo {
+  display: inline-flex; align-items: baseline; flex-wrap: wrap; column-gap: 0.18em;
+  font-family: var(--f-display);
+  text-decoration: none;
+  line-height: 1;
+  margin: 0;
+}
+.logo-es { color: var(--fucsia); font-size: 1.05rem; }
+.logo-raco { font-size: 1.7rem; letter-spacing: -0.01em; }
+.logo-sub {
+  font-family: var(--f-text); font-style: italic; font-size: 0.95rem;
+  color: var(--vi-suau); margin-left: 0.25em;
+}
+
+.nav { display: flex; align-items: center; gap: 1.75rem; margin-left: auto; }
+.nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.nav a { text-decoration: none; font-weight: 500; padding-block: 0.4rem; }
+.nav a:hover { text-decoration: underline; }
+
+.lang { display: flex; gap: 0.15rem; }
+.lang button {
+  font: 500 0.85rem/1 var(--f-text);
+  background: none; border: 0; color: var(--vi-suau);
+  padding: 0.45rem 0.45rem; border-radius: 4px; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { color: var(--vi); font-weight: 800; text-decoration: underline; text-underline-offset: 0.3em; }
+.lang button:hover { color: var(--vi); }
+
+.btn-call { background: var(--vi); color: var(--cal); min-height: 2.6rem; padding-inline: 1rem; }
+.btn-call:hover { background: var(--grana); }
+.btn-call-short { display: none; }
+
+.nav-toggle {
+  display: none;
+  width: 2.75rem; height: 2.75rem; margin-left: auto;
+  background: none; border: 0; padding: 0.6rem; cursor: pointer;
+  flex-direction: column; justify-content: space-between;
+}
+.nav-toggle span { display: block; height: 2px; background: var(--vi); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* -------- Portada ----------------------------------------------------- */
+.hero { padding-block: clamp(2.5rem, 7vw, 5.5rem) 0; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+.hero h1 { font-size: var(--t-hero); line-height: 1.02; letter-spacing: -0.015em; max-width: 14ch; }
+.hero-lead { font-size: 1.25rem; max-width: 34em; color: var(--vi-suau); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.75rem 0 1.5rem; }
+.hero-copy { padding-bottom: clamp(2.5rem, 6vw, 4.5rem); }
+
+.status { display: flex; align-items: center; gap: 0.6rem; font-weight: 500; margin: 0; }
+.status-dot { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--vi-suau); flex: none; }
+.status[data-open="true"] .status-dot { background: #3C8A4E; box-shadow: 0 0 0 4px rgba(60, 138, 78, 0.18); }
+.status[data-open="false"] .status-dot { background: var(--grana); }
+
+.hero-art { margin: 0; align-self: end; }
+.hero-art svg { display: block; width: 100%; height: auto; }
+
+/* El único movimiento automático de la página: el vino llena la copa */
+.wine-fill { transform: translateY(0); }
+@media (prefers-reduced-motion: no-preference) {
+  .wine-fill { animation: servir 1.6s cubic-bezier(.3, .7, .2, 1) 0.4s both; }
+  @keyframes servir { from { transform: translateY(80px); } to { transform: translateY(0); } }
+}
+
+/* -------- Mantel de llengües + carta ---------------------------------- */
+.mantel {
+  background-color: var(--grana);
+  background-image: url("../img/llengues.svg");
+  background-size: 64px 176px;
+  padding: clamp(3rem, 8vw, 6rem) clamp(0.75rem, 4vw, 2.5rem);
+  border-top: 6px solid var(--grana-fosc);
+  border-bottom: 6px solid var(--grana-fosc);
+}
+
+.carta {
+  max-width: 58rem;
+  margin-inline: auto;
+  background: var(--cal);
+  color: var(--vi);
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 6vw, 4.5rem);
+  border-radius: 3px;
+  box-shadow:
+    0 1px 0 rgba(43, 18, 22, 0.08),
+    0 18px 40px -12px rgba(43, 18, 22, 0.45);
+  transform: rotate(-0.6deg);
+}
+.carta > * { transform: rotate(0.6deg); }
+
+.carta-head { text-align: center; padding-bottom: 2rem; margin-bottom: 2.5rem; border-bottom: 1px solid color-mix(in srgb, var(--vi) 20%, transparent); }
+.carta-head h2 { font-size: clamp(2.5rem, 6vw, 3.75rem); margin-bottom: 0.3em; }
+.carta-head p { font-style: italic; color: var(--vi-suau); margin: 0 auto; max-width: 30em; }
+
+.carta-section {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: 1.5rem clamp(1.5rem, 4vw, 3.5rem);
+  padding-block: 1.5rem 2.25rem;
+}
+.carta-section + .carta-section { border-top: 1px dashed color-mix(in srgb, var(--vi) 22%, transparent); padding-top: 2.25rem; }
+.carta-intro h3 { font-size: var(--t-lg); color: var(--grana); }
+.carta-intro p { color: var(--vi-suau); font-size: 1.02rem; }
+
+.dishes { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+.dish {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 0.75rem;
+  align-items: baseline;
+}
+.dish-name {
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  display: flex; align-items: baseline; gap: 0.5rem;
+  min-width: 0;
+}
+/* puntos guía como en una carta impresa */
+.dish-name::after {
+  content: "";
+  flex: 1;
+  min-width: 1.5rem;
+  border-bottom: 2px dotted color-mix(in srgb, var(--vi) 35%, transparent);
+  transform: translateY(-0.3em);
+}
+.dish-price {
+  font-weight: 700;
+  color: var(--grana);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.dish-desc { grid-column: 1 / -1; color: var(--vi-suau); font-size: 1.02rem; margin-top: 0.15rem; max-width: 36em; }
+
+.carta-foot { text-align: center; font-size: var(--t-sm); color: var(--vi-suau); margin: 1.5rem 0 0; }
+
+/* -------- Bodega: pared de cajas de vino ------------------------------ */
+.bodega {
+  background: var(--vi);
+  color: var(--cal);
+  padding-block: clamp(4rem, 9vw, 7rem);
+}
+.section-head { max-width: 40rem; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+.section-head p { color: color-mix(in srgb, var(--cal) 78%, transparent); font-size: 1.15rem; }
+
+.crates {
+  list-style: none; margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr));
+  gap: 0.9rem;
+}
+.crate {
+  position: relative;
+  color: #2A140C;
+  padding: 1.6rem 1.4rem 1.4rem;
+  border-radius: 2px;
+  /* veta de la madera */
+  background:
+    radial-gradient(circle at 10px 10px, #6B4422 2.5px, transparent 3.5px) 0 0 / 100% 100% no-repeat,
+    radial-gradient(circle at calc(100% - 10px) 10px, #6B4422 2.5px, transparent 3.5px) 0 0 / 100% 100% no-repeat,
+    radial-gradient(circle at 10px calc(100% - 10px), #6B4422 2.5px, transparent 3.5px) 0 0 / 100% 100% no-repeat,
+    radial-gradient(circle at calc(100% - 10px) calc(100% - 10px), #6B4422 2.5px, transparent 3.5px) 0 0 / 100% 100% no-repeat,
+    repeating-linear-gradient(180deg, rgba(110, 66, 30, 0.10) 0 2px, transparent 2px 9px, rgba(110, 66, 30, 0.06) 9px 10px, transparent 10px 17px),
+    linear-gradient(180deg, #D3A86F, var(--fusta));
+  box-shadow: inset 0 0 0 1px rgba(80, 45, 18, 0.35), 0 10px 22px -10px rgba(0, 0, 0, 0.7);
+}
+.crate:nth-child(2n) { background-color: #C08F57; }
+.stamp {
+  display: inline-block;
+  font: 800 0.82rem/1 var(--f-text);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #4A1A10;
+  border: 2px solid currentColor;
+  padding: 0.4rem 0.6rem 0.35rem;
+  margin-bottom: 1.1rem;
+  opacity: 0.82;
+  transform: rotate(-1.5deg);
+}
+.crate h3 { font-size: 1.45rem; margin-bottom: 0.35em; }
+.crate p { margin: 0; font-size: 1.02rem; color: #3E2316; }
+
+/* -------- Cestas ------------------------------------------------------ */
+.cestas { padding-block: clamp(4rem, 9vw, 7rem); }
+.cestas-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+.cestas h2 { max-width: 16ch; }
+.cestas p { max-width: 34em; font-size: 1.15rem; color: var(--vi-suau); }
+.ticks { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 0.5rem; }
+.ticks li { padding-left: 1.7rem; position: relative; font-weight: 500; }
+/* viñeta: una sola «llengua», la llama del ikat */
+.ticks li::before {
+  content: ""; position: absolute; left: 0.25rem; top: 0.22em;
+  width: 0.6rem; height: 1.05rem;
+  background: var(--grana);
+  clip-path: polygon(50% 0, 72% 22%, 100% 50%, 72% 78%, 50% 100%, 28% 78%, 0 50%, 28% 22%);
+}
+.basket { margin: 0; }
+.basket svg { width: 100%; max-width: 22rem; height: auto; display: block; margin-inline: auto; }
+
+/* -------- Opiniones --------------------------------------------------- */
+.opiniones {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+  background: var(--mares-fosc);
+}
+.op-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+.ratings { margin: 0; display: grid; gap: 1.25rem; }
+.ratings dt { font-weight: 700; }
+.ratings dd { margin: 0; color: var(--vi-suau); }
+.score { font-family: var(--f-display); font-size: 2.6rem; color: var(--vi); line-height: 1; font-variant-numeric: tabular-nums; }
+.quote { margin: 0; }
+.quote blockquote { margin: 0; }
+.quote p { font-family: var(--f-display); font-size: 1.35rem; line-height: 1.35; margin-bottom: 0.6em; }
+.quote figcaption { color: var(--vi-suau); font-style: italic; }
+
+/* -------- Visítanos: persiana verde ----------------------------------- */
+.visita {
+  color: var(--cal);
+  padding-block: clamp(4rem, 9vw, 7rem);
+  background:
+    repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.13) 0 3px, rgba(255, 255, 255, 0.03) 3px 5px, transparent 5px 22px),
+    var(--persiana);
+}
+.visita-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+.visita h3 { font-size: var(--t-lg); }
+address { font-style: normal; font-size: 1.15rem; line-height: 1.6; margin-bottom: 1.25rem; }
+address a { font-weight: 700; }
+.extras { list-style: none; padding: 0; margin: 0 0 1.75rem; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.extras li {
+  font-size: 0.95rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--cal) 45%, transparent);
+  border-radius: 999px;
+}
+.visita-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.hours { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 1.08rem; }
+.hours th, .hours td { text-align: left; padding: 0.5rem 0; border-bottom: 1px solid color-mix(in srgb, var(--cal) 18%, transparent); }
+.hours th { font-weight: 400; }
+.hours td { text-align: right; }
+.hours tr.is-today th, .hours tr.is-today td { font-weight: 800; color: #fff; }
+.hours tr.is-today th::after { content: attr(data-today-label); font-weight: 500; font-size: 0.8rem; margin-left: 0.5rem; padding: 0.1rem 0.45rem; border-radius: 999px; background: var(--cal); color: var(--persiana); vertical-align: 0.1em; }
+
+.map { min-height: 18rem; height: 100%; }
+.map-load {
+  width: 100%; height: 100%; min-height: 18rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem;
+  padding: 1.5rem;
+  border: 2px dashed color-mix(in srgb, var(--cal) 50%, transparent);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--cal);
+  font: inherit;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.map-load:hover { background: rgba(0, 0, 0, 0.22); border-color: var(--cal); }
+.map-load-title { font-family: var(--f-display); font-size: 1.4rem; }
+.map-load-note { font-size: 0.92rem; opacity: 0.8; max-width: 22em; }
+.map iframe { width: 100%; height: 100%; min-height: 18rem; border: 0; border-radius: var(--radius); display: block; }
+
+/* -------- Pie ---------------------------------------------------------- */
+.site-footer {
+  color: var(--cal);
+  padding-block: calc(2.5rem + 14px) calc(2.5rem + env(safe-area-inset-bottom));
+  /* una franja de llengües como el borde de un mantel */
+  background:
+    linear-gradient(var(--vi), var(--vi)) 0 14px / 100% 100% no-repeat,
+    url("../img/llengues.svg") 0 -81px / 64px 176px repeat-x;
+}
+.footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+.logo-footer .logo-sub { color: color-mix(in srgb, var(--cal) 70%, transparent); }
+.social { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }
+.social a { font-weight: 500; }
+.footer-note { margin: 0; color: color-mix(in srgb, var(--cal) 70%, transparent); font-size: var(--t-sm); }
+
+/* -------- Responsive -------------------------------------------------- */
+@media (max-width: 62rem) {
+  .op-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .ratings { grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .visita-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .map { grid-column: 1 / -1; }
+}
+
+@media (max-width: 52rem) {
+  :root { --header-h: 3.75rem; }
+  .nav-toggle { display: flex; }
+  .nav {
+    position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; align-items: flex-start; gap: 1rem;
+    background: var(--mares);
+    padding: 1rem var(--gutter) 1.5rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--vi) 15%, transparent);
+    box-shadow: 0 16px 24px -16px rgba(43, 18, 22, 0.4);
+    display: none;
+    overscroll-behavior: contain;
+  }
+  .nav.is-open { display: flex; }
+  .nav ul { flex-direction: column; gap: 0.25rem; width: 100%; }
+  .nav a { display: block; font-family: var(--f-display); font-size: 1.5rem; padding-block: 0.35rem; }
+  .header-row { gap: 0.5rem; }
+  .btn-call-long { display: none; }
+  .btn-call-short { display: inline; }
+  .nav-toggle { order: 2; margin-left: auto; }
+  .btn-call { order: 3; }
+
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-copy { padding-bottom: 0.5rem; }
+  .hero-art { max-width: 30rem; margin-inline: auto; width: 100%; }
+
+  .carta { transform: none; }
+  .carta > * { transform: none; }
+  .carta-section { grid-template-columns: 1fr; gap: 1rem; }
+
+  .cestas-grid { grid-template-columns: 1fr; }
+  .basket { order: -1; }
+  .basket svg { max-width: 14rem; }
+}
+
+@media (max-width: 36rem) {
+  .logo-sub { display: none; }
+  .op-grid { grid-template-columns: 1fr; }
+  .ratings { grid-template-columns: 1fr 1fr; }
+  .visita-grid { grid-template-columns: 1fr; }
+  .hero-actions .btn { flex: 1 1 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
