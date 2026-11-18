@@ -1,7 +1,9 @@
 # Es Racó de Son Verí: web
 
 Web del bar vinoteca **Es Racó de Son Verí** (Son Verí Nou, Llucmajor, Mallorca).
-Llonguets, embutidos y quesos de la isla, vinos y cestas de regalo.
+Llonguets, gildas, tablas de embutido y queso, tartas de queso, bodega de Ribera y Rioja, terraza y cenas de grupo.
+
+Publicada en <https://rmartins2009palma-ctrl.github.io/restaurante/> (GitHub Pages, desde la rama `claude/optimistic-hypatia-nqk1yh`).
 
 Es una web estática: HTML, CSS y un poco de JavaScript, sin dependencias ni herramientas de compilación.
 Se puede alojar gratis en GitHub Pages, Netlify o Cloudflare Pages.
@@ -12,36 +14,40 @@ Se puede alojar gratis en GitHub Pages, Netlify o Cloudflare Pages.
 python3 -m http.server 8080
 ```
 
-Y abrir <http://localhost:8080>. Para otro idioma: `?lang=en` o `?lang=de`.
+Y abrir <http://localhost:8080>. Para otro idioma: `?lang=ca` (mallorquí), `?lang=en` o `?lang=de`.
 
 ## Estructura
 
 | Archivo | Qué contiene |
 |---|---|
-| `index.html` | Todo el contenido en español: carta, precios, horario, dirección |
-| `js/i18n.js` | Traducciones al inglés y al alemán |
+| `index.html` | Todo el contenido en español: carta, horario, dirección. Los títulos de sección van siempre en mallorquín |
+| `js/i18n.js` | Traducciones al mallorquí, al inglés y al alemán |
 | `js/main.js` | Idioma, aviso de abierto/cerrado, menú móvil, mapa bajo demanda |
 | `css/styles.css` | Estilos (los colores están al principio, en `:root`) |
 | `css/fonts.css`, `fonts/` | Fuentes Young Serif y Alegreya Sans, alojadas en la web (licencia OFL) |
-| `img/llengues.svg` | Patrón de roba de llengües (lo genera `tools/llengues.py`; el arco de la portada, `tools/arco.py`) |
+| `img/fotos/` | Fotos del local (de su Instagram) en WebP y JPG, en dos tamaños |
+| `img/logo.png`, `img/logo-blanco.png` | Logo, extraído del cartel de Navidad (versión oscura y blanca) |
+| `img/llengues.svg` | Patrón de roba de llengües (lo genera `tools/llengues.py`) |
 | `docs/DISENO.md` | Investigación, benchmark de 20 webs y plan de diseño |
 
 ## Cambios habituales
 
-- **Precios**: en `index.html`, cada plato tiene `data-price="6.5"`. Cambia ese número
-  (con punto decimal) y el texto de al lado. La web formatea el precio según el idioma.
+- **Precios**: ahora la carta no muestra precios. Para añadirlos, pon en cada plato
+  `<span class="dish-price" data-price="6.5">6,50&nbsp;€</span>`: la web ya formatea el precio según el idioma.
 - **Platos**: copia un bloque `<li class="dish">…</li>`. Si el texto tiene `data-i18n="clave"`,
-  añade esa clave en `js/i18n.js` en inglés y alemán.
+  añade esa clave en `js/i18n.js` en mallorquí, inglés y alemán.
 - **Horario**: la tabla de `index.html` y, en `js/main.js`, `OPEN_DAYS` (0 = domingo) y `OPEN_HOUR`.
-- **Fotos**: si queréis usar las vuestras de Instagram, ponedlas en `img/` y avisad para integrarlas.
+- **Fotos**: van en `img/fotos/`, con un `.webp` y un `.jpg` de cada una.
 
 ## Antes de publicar: datos a confirmar con el local
 
 - [ ] **Dirección**: Google dice *Rambla 1, local 2 (esquina Ametler)*; la etiqueta de vuestros productos dice *C/ Rambla 4, local 7*.
 - [ ] **Horario**: casi todas las fuentes dicen martes a sábado de 19:00 a 24:00; una dice miércoles a domingo.
-- [ ] **Carta y precios**: los platos salen de las fotos y reseñas públicas, pero **los precios son orientativos**.
+- [ ] **Carta**: sale de vuestras fotos, del cartel de Navidad y de las reseñas. Falta la lista de **precios**.
+- [ ] **Menú de grupo de 35 €**: confirmar que es el de este año (Navidad 2026).
+- [ ] **Logo**: está extraído del cartel; si tenéis el archivo original (PNG o SVG), queda más nítido.
 - [ ] Si se puede reservar por **WhatsApp** en el 656 55 88 06, se puede añadir un botón.
-- [ ] Dominio definitivo, para poner la URL absoluta en `og:image` y el `canonical`.
+- [ ] Si se compra un dominio propio, cambiar las URL de `og:image` y `og:url` en `index.html`.
 - [ ] Aviso legal y política de privacidad (obligatorios en España para webs de empresa, LSSI y RGPD).
 
 ## Privacidad

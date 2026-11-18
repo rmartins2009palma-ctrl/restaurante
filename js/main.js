@@ -2,8 +2,9 @@
   'use strict';
 
   const I18N = window.I18N || {};
-  const LANGS = ['es', 'en', 'de'];
-  const LOCALE = { es: 'es-ES', en: 'en-GB', de: 'de-DE' };
+  const LANGS = ['ca', 'es', 'en', 'de'];
+  const LOCALE = { ca: 'ca-ES', es: 'es-ES', en: 'en-GB', de: 'de-DE' };
+  const has = (obj, key) => Object.prototype.hasOwnProperty.call(obj || {}, key);
 
   /* Horario: martes (2) a sábado (6), de 19:00 a 24:00, hora de Mallorca */
   const OPEN_DAYS = [2, 3, 4, 5, 6];
@@ -31,10 +32,11 @@
     lang = LANGS.includes(next) ? next : 'es';
     document.documentElement.lang = lang;
 
+    // Un texto vacío en el diccionario oculta el elemento
+    // (p. ej. la traducción del titular cuando la página ya está en mallorquín)
     textNodes.forEach((el) => {
       const key = el.dataset.i18n;
-      const value = lang === 'es' ? el.dataset.i18nEs : (I18N[lang] && I18N[lang][key]);
-      el.textContent = value || el.dataset.i18nEs;
+      el.textContent = lang !== 'es' && has(I18N[lang], key) ? I18N[lang][key] : el.dataset.i18nEs;
     });
 
     attrNodes.forEach((el) => {
@@ -77,12 +79,14 @@
       const saved = localStorage.getItem('lang');
       if (LANGS.includes(saved)) return saved;
     } catch (e) { /* sin almacenamiento */ }
-    for (const l of navigator.languages || []) {
+    // Idioma del navegador: mallorquín/catalán, español, inglés o alemán.
+    // Para cualquier otro idioma extranjero, inglés.
+    const prefs = navigator.languages || [];
+    for (const l of prefs) {
       const base = l.slice(0, 2).toLowerCase();
-      if (base === 'es' || base === 'ca') return 'es';
       if (LANGS.includes(base)) return base;
     }
-    return 'es';
+    return prefs.length ? 'en' : 'es';
   }
 
   document.querySelectorAll('.lang button').forEach((b) => {

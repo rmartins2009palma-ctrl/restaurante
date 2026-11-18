@@ -29,7 +29,7 @@ def flame(cx, cy, half_w, half_h, jitter):
         pts.append((x, y))
     return 'M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in pts) + 'Z'
 
-C = dict(fons='#F6EFE2', grana='#A3182F', vi='#5C0F1E', rosa='#D9667A')
+C = dict(fons='#F6EFE2', grana='#9E1221', vi='#5A0D18', rosa='#D2606F')
 paths = []
 for cx, cy in [(W/2, H/2), (0, 0), (W, 0), (0, H), (W, H)]:
     paths.append((C['grana'], flame(cx, cy, 20, 88, 2.6)))

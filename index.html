@@ -4,16 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Es Racó de Son Verí · Bar vinoteca y llonguets en Son Verí Nou</title>
-  <meta name="description" content="Bar vinoteca en Son Verí Nou (Llucmajor, Mallorca). Llonguets mallorquines, tablas de embutido y queso, vinos de la isla y cestas de regalo. Martes a sábado de 19:00 a 24:00.">
-  <meta name="theme-color" content="#E5CD9E">
+  <meta name="description" content="Bar vinoteca en Son Verí Nou (Llucmajor, Mallorca). Llonguets, gildas, tablas de embutido y queso, tartas de queso, bodega de Ribera y Rioja, terraza y cenas de grupo. Martes a sábado de 19:00 a 24:00.">
+  <meta name="theme-color" content="#2B1216">
   <meta name="color-scheme" content="light">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="restaurant">
   <meta property="og:title" content="Es Racó de Son Verí">
-  <meta property="og:description" content="Un llonguet, una copa y la noche por delante. Bar vinoteca en Son Verí Nou, Mallorca.">
-  <meta property="og:image" content="img/og.jpg">
+  <meta property="og:description" content="Un llonguet, una copa i sa nit per davant. Bar vinoteca a Son Verí Nou, Mallorca.">
+  <meta property="og:image" content="https://rmartins2009palma-ctrl.github.io/restaurante/img/og.jpg">
+  <meta property="og:url" content="https://rmartins2009palma-ctrl.github.io/restaurante/">
   <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="ca_ES">
 
   <link rel="preload" href="fonts/young-serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/alegreya-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -25,7 +27,9 @@
     "@context": "https://schema.org",
     "@type": "BarOrPub",
     "name": "Es Racó de Son Verí",
-    "description": "Bar vinoteca con llonguets mallorquines, embutidos, quesos y venta de productos artesanos.",
+    "description": "Bar vinoteca con llonguets, gildas, tablas de embutido y queso, tartas de queso y bodega de Ribera del Duero y Rioja.",
+    "logo": "https://rmartins2009palma-ctrl.github.io/restaurante/img/logo.png",
+    "image": "https://rmartins2009palma-ctrl.github.io/restaurante/img/og.jpg",
     "servesCuisine": ["Mallorquina", "Tapas", "Embutidos y quesos"],
     "priceRange": "€",
     "telephone": "+34 656 55 88 06",
@@ -54,10 +58,26 @@
 <body>
   <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
 
+  <!-- Barra superior: teléfono, horario e idiomas -->
+  <div class="topbar">
+    <div class="wrap topbar-row">
+      <p class="topbar-info">
+        <a href="tel:+34656558806">656&nbsp;55&nbsp;88&nbsp;06</a>
+        <span class="topbar-hours" data-i18n="topHours">Martes a sábado, de 19:00 a 24:00</span>
+      </p>
+      <div class="lang" role="group" data-i18n-attr="aria-label:langLabel" aria-label="Idioma">
+        <button type="button" data-lang="ca" lang="ca" aria-pressed="false">Mallorquí</button>
+        <button type="button" data-lang="es" lang="es" aria-pressed="true">Español</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">English</button>
+        <button type="button" data-lang="de" lang="de" aria-pressed="false">Deutsch</button>
+      </div>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="wrap header-row">
-      <a class="logo" href="#top" aria-label="Es Racó de Son Verí, inicio" translate="no">
-        <span class="logo-es">es</span><span class="logo-raco">Racó</span><span class="logo-sub">de Son Verí</span>
+      <a class="logo" href="#top">
+        <img src="img/logo.png" width="583" height="462" alt="Es Racó de Son Verí">
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" data-i18n-attr="aria-label:menuOpen" aria-label="Abrir menú">
@@ -67,15 +87,11 @@
       <nav id="nav" class="nav" data-i18n-attr="aria-label:navLabel" aria-label="Principal">
         <ul>
           <li><a href="#carta" data-i18n="navCarta">La carta</a></li>
-          <li><a href="#vinos" data-i18n="navVinos">Vinos</a></li>
-          <li><a href="#cestas" data-i18n="navCestas">Cestas</a></li>
-          <li><a href="#visita" data-i18n="navVisita">Visítanos</a></li>
+          <li><a href="#grups" data-i18n="navGrups">Cenas de grupo</a></li>
+          <li><a href="#celler" data-i18n="navCeller">Bodega</a></li>
+          <li><a href="#terrassa" data-i18n="navTerrassa">Terraza</a></li>
+          <li><a href="#visita" data-i18n="navVisita">Dónde estamos</a></li>
         </ul>
-        <div class="lang" role="group" data-i18n-attr="aria-label:langLabel" aria-label="Idioma">
-          <button type="button" data-lang="es" aria-pressed="true">ES</button>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
-          <button type="button" data-lang="de" aria-pressed="false">DE</button>
-        </div>
       </nav>
 
       <a class="btn btn-call" href="tel:+34656558806">
@@ -91,8 +107,9 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <h1 id="hero-title" data-i18n="heroTitle">Un llonguet, una copa y la noche por delante.</h1>
-          <p class="hero-lead" data-i18n="heroLead">Bar vinoteca de barrio en Son Verí Nou. Llonguets mallorquines rellenos al momento, tablas de embutido y queso de la isla, y una bodega con vinos de Mallorca y de toda la península.</p>
+          <h1 id="hero-title" lang="ca">Un llonguet, una copa i sa nit per davant.</h1>
+          <p class="gloss" data-i18n="heroGloss">Un llonguet, una copa y la noche por delante.</p>
+          <p class="hero-lead" data-i18n="heroLead">Bar vinoteca de barrio en Son Verí Nou. Llonguets rellenos al momento, gildas, tablas de embutido y queso, nuestras tartas de queso y una bodega llena de Ribera y Rioja.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+34656558806" data-i18n="heroCall">Reservar: 656&nbsp;55&nbsp;88&nbsp;06</a>
             <a class="btn btn-ghost" href="#carta" data-i18n="heroMenu">Ver la carta</a>
@@ -103,414 +120,240 @@
           </p>
         </div>
 
-        <figure class="hero-art">
-          <svg viewBox="30 14 590 422" role="img" aria-labelledby="art-title" data-i18n-attr="aria-label:artLabel">
-            <title id="art-title">Un llonguet sobre una tabla de madera, con una copa de vino tinto y aceitunas, delante de un arco de marès con estanterías de vino</title>
-            <defs>
-              <radialGradient id="crust" cx="42%" cy="28%" r="78%">
-                <stop offset="0" stop-color="#F4CB86"/>
-                <stop offset=".5" stop-color="#DB9844"/>
-                <stop offset="1" stop-color="#9E5A22"/>
-              </radialGradient>
-              <linearGradient id="crumb" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#FFF1D2"/>
-                <stop offset="1" stop-color="#EBC98C"/>
-              </linearGradient>
-              <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#BE8752"/>
-                <stop offset="1" stop-color="#8E5B2C"/>
-              </linearGradient>
-              <linearGradient id="wine" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#4A0A17"/>
-                <stop offset=".45" stop-color="#7A1426"/>
-                <stop offset="1" stop-color="#3D0812"/>
-              </linearGradient>
-              <clipPath id="bowl"><path d="M505 120c-3 62 6 112 47 124 41-12 50-62 47-124z"/></clipPath>
-            </defs>
-
-            <!-- arco de marès con la bodega al fondo -->
-            <clipPath id="opening"><path d="M124 356 V220 A176 176 0 0 1 476 220 V356 Z"/></clipPath>
-            <radialGradient id="glow" cx="50%" cy="38%" r="65%"><stop offset="0" stop-color="#6E3B24"/><stop offset="1" stop-color="#2E1712"/></radialGradient>
-            <path d="M124 356 V220 A176 176 0 0 1 476 220 V356 Z" fill="url(#glow)"/>
-            <g clip-path="url(#opening)">
-            <path d="M132.5 80 h4 v13.4 q4.5 2 4.5 8 V128 h-13 V101.4 q0-6 4.5-8z" fill="#5A4520"/>
-            <rect x="130.0" y="106.4" width="9" height="10.6" fill="#E9DAB8" opacity=".55"/>
-            <path d="M149.0 80 h4 v13.4 q4.0 2 4.0 8 V128 h-12 V101.4 q0-6 4.0-8z" fill="#5A4520"/>
-            <rect x="147.0" y="106.4" width="8" height="10.6" fill="#E9DAB8" opacity=".55"/>
-            <path d="M165.0 81 h4 v13.2 q4.0 2 4.0 8 V128 h-12 V102.2 q0-6 4.0-8z" fill="#24110F"/>
-            <rect x="163.0" y="106.8" width="8" height="10.3" fill="#E9DAB8" opacity=".55"/>
-            <path d="M181.0 82 h4 v12.9 q5.0 2 5.0 8 V128 h-14 V102.9 q0-6 5.0-8z" fill="#5A4520"/>
-            <rect x="178.0" y="107.3" width="10" height="10.1" fill="#E9DAB8" opacity=".55"/>
-            <path d="M199.0 88 h4 v11.2 q5.0 2 5.0 8 V128 h-14 V107.2 q0-6 5.0-8z" fill="#3A0B16"/>
-            <rect x="196.0" y="110.0" width="10" height="8.8" fill="#E9DAB8" opacity=".55"/>
-            <path d="M215.0 85 h4 v12.0 q4.0 2 4.0 8 V128 h-12 V105.0 q0-6 4.0-8z" fill="#3A0B16"/>
-            <rect x="213.0" y="108.7" width="8" height="9.5" fill="#E9DAB8" opacity=".55"/>
-            <path d="M233.5 81 h4 v13.2 q4.5 2 4.5 8 V128 h-13 V102.2 q0-6 4.5-8z" fill="#3A0B16"/>
-            <path d="M251.0 84 h4 v12.3 q5.0 2 5.0 8 V128 h-14 V104.3 q0-6 5.0-8z" fill="#5A4520"/>
-            <rect x="248.0" y="108.2" width="10" height="9.7" fill="#E9DAB8" opacity=".55"/>
-            <path d="M267.5 78 h4 v14.0 q4.5 2 4.5 8 V128 h-13 V100.0 q0-6 4.5-8z" fill="#24110F"/>
-            <rect x="265.0" y="105.5" width="9" height="11.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M284.0 84 h4 v12.3 q5.0 2 5.0 8 V128 h-14 V104.3 q0-6 5.0-8z" fill="#24110F"/>
-            <path d="M302.0 87 h4 v11.5 q4.0 2 4.0 8 V128 h-12 V106.5 q0-6 4.0-8z" fill="#3A0B16"/>
-            <path d="M320.0 84 h4 v12.3 q4.0 2 4.0 8 V128 h-12 V104.3 q0-6 4.0-8z" fill="#5A4520"/>
-            <rect x="318.0" y="108.2" width="8" height="9.7" fill="#E9DAB8" opacity=".55"/>
-            <path d="M336.0 88 h4 v11.2 q5.0 2 5.0 8 V128 h-14 V107.2 q0-6 5.0-8z" fill="#4A0E1A"/>
-            <rect x="333.0" y="110.0" width="10" height="8.8" fill="#E9DAB8" opacity=".55"/>
-            <path d="M352.5 82 h4 v12.9 q4.5 2 4.5 8 V128 h-13 V102.9 q0-6 4.5-8z" fill="#2A3A22"/>
-            <rect x="350.0" y="107.3" width="9" height="10.1" fill="#E9DAB8" opacity=".55"/>
-            <path d="M369.0 78 h4 v14.0 q5.0 2 5.0 8 V128 h-14 V100.0 q0-6 5.0-8z" fill="#4A0E1A"/>
-            <path d="M387.5 87 h4 v11.5 q4.5 2 4.5 8 V128 h-13 V106.5 q0-6 4.5-8z" fill="#24110F"/>
-            <rect x="385.0" y="109.5" width="9" height="9.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M406.0 86 h4 v11.8 q4.0 2 4.0 8 V128 h-12 V105.8 q0-6 4.0-8z" fill="#4A0E1A"/>
-            <rect x="404.0" y="109.1" width="8" height="9.2" fill="#E9DAB8" opacity=".55"/>
-            <path d="M421.0 81 h4 v13.2 q4.0 2 4.0 8 V128 h-12 V102.2 q0-6 4.0-8z" fill="#5A4520"/>
-            <rect x="419.0" y="106.8" width="8" height="10.3" fill="#E9DAB8" opacity=".55"/>
-            <path d="M437.5 80 h4 v13.4 q4.5 2 4.5 8 V128 h-13 V101.4 q0-6 4.5-8z" fill="#4A0E1A"/>
-            <path d="M454.5 78 h4 v14.0 q4.5 2 4.5 8 V128 h-13 V100.0 q0-6 4.5-8z" fill="#5A4520"/>
-            <rect x="452.0" y="105.5" width="9" height="11.0" fill="#E9DAB8" opacity=".55"/>
-            <rect x="124" y="128" width="352" height="5" fill="#7A4A2A"/>
-            <path d="M132.0 156 h4 v11.2 q4.0 2 4.0 8 V196 h-12 V175.2 q0-6 4.0-8z" fill="#24110F"/>
-            <path d="M149.0 153 h4 v12.0 q4.0 2 4.0 8 V196 h-12 V173.0 q0-6 4.0-8z" fill="#4A0E1A"/>
-            <rect x="147.0" y="176.7" width="8" height="9.5" fill="#E9DAB8" opacity=".55"/>
-            <path d="M164.0 154 h4 v11.8 q4.0 2 4.0 8 V196 h-12 V173.8 q0-6 4.0-8z" fill="#4A0E1A"/>
-            <rect x="162.0" y="177.1" width="8" height="9.2" fill="#E9DAB8" opacity=".55"/>
-            <path d="M180.0 151 h4 v12.6 q5.0 2 5.0 8 V196 h-14 V171.6 q0-6 5.0-8z" fill="#24110F"/>
-            <rect x="177.0" y="175.8" width="10" height="9.9" fill="#E9DAB8" opacity=".55"/>
-            <path d="M196.0 153 h4 v12.0 q4.0 2 4.0 8 V196 h-12 V173.0 q0-6 4.0-8z" fill="#3A0B16"/>
-            <rect x="194.0" y="176.7" width="8" height="9.5" fill="#E9DAB8" opacity=".55"/>
-            <path d="M212.0 151 h4 v12.6 q5.0 2 5.0 8 V196 h-14 V171.6 q0-6 5.0-8z" fill="#24110F"/>
-            <rect x="209.0" y="175.8" width="10" height="9.9" fill="#E9DAB8" opacity=".55"/>
-            <path d="M230.0 149 h4 v13.2 q5.0 2 5.0 8 V196 h-14 V170.2 q0-6 5.0-8z" fill="#3A0B16"/>
-            <rect x="227.0" y="174.8" width="10" height="10.3" fill="#E9DAB8" opacity=".55"/>
-            <path d="M249.0 146 h4 v14.0 q4.0 2 4.0 8 V196 h-12 V168.0 q0-6 4.0-8z" fill="#4A0E1A"/>
-            <rect x="247.0" y="173.5" width="8" height="11.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M266.0 153 h4 v12.0 q5.0 2 5.0 8 V196 h-14 V173.0 q0-6 5.0-8z" fill="#2A3A22"/>
-            <rect x="263.0" y="176.7" width="10" height="9.5" fill="#E9DAB8" opacity=".55"/>
-            <path d="M284.0 150 h4 v12.9 q5.0 2 5.0 8 V196 h-14 V170.9 q0-6 5.0-8z" fill="#5A4520"/>
-            <rect x="281.0" y="175.3" width="10" height="10.1" fill="#E9DAB8" opacity=".55"/>
-            <path d="M303.0 155 h4 v11.5 q4.0 2 4.0 8 V196 h-12 V174.5 q0-6 4.0-8z" fill="#1E3627"/>
-            <rect x="301.0" y="177.6" width="8" height="9.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M320.0 150 h4 v12.9 q4.0 2 4.0 8 V196 h-12 V170.9 q0-6 4.0-8z" fill="#24110F"/>
-            <rect x="318.0" y="175.3" width="8" height="10.1" fill="#E9DAB8" opacity=".55"/>
-            <path d="M338.5 148 h4 v13.4 q4.5 2 4.5 8 V196 h-13 V169.4 q0-6 4.5-8z" fill="#4A0E1A"/>
-            <path d="M354.0 153 h4 v12.0 q4.0 2 4.0 8 V196 h-12 V173.0 q0-6 4.0-8z" fill="#5A4520"/>
-            <rect x="352.0" y="176.7" width="8" height="9.5" fill="#E9DAB8" opacity=".55"/>
-            <path d="M369.5 153 h4 v12.0 q4.5 2 4.5 8 V196 h-13 V173.0 q0-6 4.5-8z" fill="#4A0E1A"/>
-            <rect x="367.0" y="176.7" width="9" height="9.5" fill="#E9DAB8" opacity=".55"/>
-            <path d="M385.5 150 h4 v12.9 q4.5 2 4.5 8 V196 h-13 V170.9 q0-6 4.5-8z" fill="#5A4520"/>
-            <rect x="383.0" y="175.3" width="9" height="10.1" fill="#E9DAB8" opacity=".55"/>
-            <path d="M401.0 152 h4 v12.3 q4.0 2 4.0 8 V196 h-12 V172.3 q0-6 4.0-8z" fill="#24110F"/>
-            <rect x="399.0" y="176.2" width="8" height="9.7" fill="#E9DAB8" opacity=".55"/>
-            <path d="M417.0 151 h4 v12.6 q4.0 2 4.0 8 V196 h-12 V171.6 q0-6 4.0-8z" fill="#4A0E1A"/>
-            <path d="M435.0 148 h4 v13.4 q5.0 2 5.0 8 V196 h-14 V169.4 q0-6 5.0-8z" fill="#3A0B16"/>
-            <path d="M451.0 149 h4 v13.2 q4.0 2 4.0 8 V196 h-12 V170.2 q0-6 4.0-8z" fill="#24110F"/>
-            <rect x="449.0" y="174.8" width="8" height="10.3" fill="#E9DAB8" opacity=".55"/>
-            <path d="M466.0 147 h4 v13.7 q4.0 2 4.0 8 V196 h-12 V168.7 q0-6 4.0-8z" fill="#2A3A22"/>
-            <rect x="464.0" y="173.9" width="8" height="10.8" fill="#E9DAB8" opacity=".55"/>
-            <rect x="124" y="196" width="352" height="5" fill="#7A4A2A"/>
-            <path d="M133.0 220 h4 v12.3 q5.0 2 5.0 8 V264 h-14 V240.3 q0-6 5.0-8z" fill="#24110F"/>
-            <rect x="130.0" y="244.2" width="10" height="9.7" fill="#E9DAB8" opacity=".55"/>
-            <path d="M149.0 217 h4 v13.2 q4.0 2 4.0 8 V264 h-12 V238.2 q0-6 4.0-8z" fill="#3A0B16"/>
-            <rect x="147.0" y="242.8" width="8" height="10.3" fill="#E9DAB8" opacity=".55"/>
-            <path d="M165.0 222 h4 v11.8 q5.0 2 5.0 8 V264 h-14 V241.8 q0-6 5.0-8z" fill="#24110F"/>
-            <rect x="162.0" y="245.1" width="10" height="9.2" fill="#E9DAB8" opacity=".55"/>
-            <path d="M184.0 218 h4 v12.9 q4.0 2 4.0 8 V264 h-12 V238.9 q0-6 4.0-8z" fill="#1E3627"/>
-            <path d="M200.0 214 h4 v14.0 q5.0 2 5.0 8 V264 h-14 V236.0 q0-6 5.0-8z" fill="#5A4520"/>
-            <rect x="197.0" y="241.5" width="10" height="11.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M217.0 223 h4 v11.5 q5.0 2 5.0 8 V264 h-14 V242.5 q0-6 5.0-8z" fill="#1E3627"/>
-            <rect x="214.0" y="245.6" width="10" height="9.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M233.5 218 h4 v12.9 q4.5 2 4.5 8 V264 h-13 V238.9 q0-6 4.5-8z" fill="#2A3A22"/>
-            <rect x="231.0" y="243.3" width="9" height="10.1" fill="#E9DAB8" opacity=".55"/>
-            <path d="M252.5 217 h4 v13.2 q4.5 2 4.5 8 V264 h-13 V238.2 q0-6 4.5-8z" fill="#3A0B16"/>
-            <rect x="250.0" y="242.8" width="9" height="10.3" fill="#E9DAB8" opacity=".55"/>
-            <path d="M268.5 215 h4 v13.7 q4.5 2 4.5 8 V264 h-13 V236.7 q0-6 4.5-8z" fill="#1E3627"/>
-            <rect x="266.0" y="241.9" width="9" height="10.8" fill="#E9DAB8" opacity=".55"/>
-            <path d="M286.0 223 h4 v11.5 q5.0 2 5.0 8 V264 h-14 V242.5 q0-6 5.0-8z" fill="#5A4520"/>
-            <path d="M305.5 224 h4 v11.2 q4.5 2 4.5 8 V264 h-13 V243.2 q0-6 4.5-8z" fill="#24110F"/>
-            <rect x="303.0" y="246.0" width="9" height="8.8" fill="#E9DAB8" opacity=".55"/>
-            <path d="M323.0 222 h4 v11.8 q5.0 2 5.0 8 V264 h-14 V241.8 q0-6 5.0-8z" fill="#24110F"/>
-            <rect x="320.0" y="245.1" width="10" height="9.2" fill="#E9DAB8" opacity=".55"/>
-            <path d="M342.5 221 h4 v12.0 q4.5 2 4.5 8 V264 h-13 V241.0 q0-6 4.5-8z" fill="#24110F"/>
-            <rect x="340.0" y="244.7" width="9" height="9.5" fill="#E9DAB8" opacity=".55"/>
-            <path d="M360.0 214 h4 v14.0 q4.0 2 4.0 8 V264 h-12 V236.0 q0-6 4.0-8z" fill="#5A4520"/>
-            <path d="M376.0 218 h4 v12.9 q4.0 2 4.0 8 V264 h-12 V238.9 q0-6 4.0-8z" fill="#4A0E1A"/>
-            <rect x="374.0" y="243.3" width="8" height="10.1" fill="#E9DAB8" opacity=".55"/>
-            <path d="M393.0 222 h4 v11.8 q4.0 2 4.0 8 V264 h-12 V241.8 q0-6 4.0-8z" fill="#4A0E1A"/>
-            <rect x="391.0" y="245.1" width="8" height="9.2" fill="#E9DAB8" opacity=".55"/>
-            <path d="M409.0 223 h4 v11.5 q5.0 2 5.0 8 V264 h-14 V242.5 q0-6 5.0-8z" fill="#24110F"/>
-            <path d="M425.5 217 h4 v13.2 q4.5 2 4.5 8 V264 h-13 V238.2 q0-6 4.5-8z" fill="#24110F"/>
-            <path d="M444.5 214 h4 v14.0 q4.5 2 4.5 8 V264 h-13 V236.0 q0-6 4.5-8z" fill="#3A0B16"/>
-            <rect x="442.0" y="241.5" width="9" height="11.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M463.0 215 h4 v13.7 q5.0 2 5.0 8 V264 h-14 V236.7 q0-6 5.0-8z" fill="#5A4520"/>
-            <rect x="460.0" y="241.9" width="10" height="10.8" fill="#E9DAB8" opacity=".55"/>
-            <rect x="124" y="264" width="352" height="5" fill="#7A4A2A"/>
-            <path d="M132.5 283 h4 v13.7 q4.5 2 4.5 8 V332 h-13 V304.7 q0-6 4.5-8z" fill="#1E3627"/>
-            <rect x="130.0" y="309.9" width="9" height="10.8" fill="#E9DAB8" opacity=".55"/>
-            <path d="M151.0 287 h4 v12.6 q5.0 2 5.0 8 V332 h-14 V307.6 q0-6 5.0-8z" fill="#24110F"/>
-            <rect x="148.0" y="311.8" width="10" height="9.9" fill="#E9DAB8" opacity=".55"/>
-            <path d="M168.0 290 h4 v11.8 q5.0 2 5.0 8 V332 h-14 V309.8 q0-6 5.0-8z" fill="#5A4520"/>
-            <rect x="165.0" y="313.1" width="10" height="9.2" fill="#E9DAB8" opacity=".55"/>
-            <path d="M184.5 289 h4 v12.0 q4.5 2 4.5 8 V332 h-13 V309.0 q0-6 4.5-8z" fill="#4A0E1A"/>
-            <path d="M200.5 291 h4 v11.5 q4.5 2 4.5 8 V332 h-13 V310.5 q0-6 4.5-8z" fill="#2A3A22"/>
-            <rect x="198.0" y="313.6" width="9" height="9.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M218.0 282 h4 v14.0 q4.0 2 4.0 8 V332 h-12 V304.0 q0-6 4.0-8z" fill="#4A0E1A"/>
-            <rect x="216.0" y="309.5" width="8" height="11.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M236.5 290 h4 v11.8 q4.5 2 4.5 8 V332 h-13 V309.8 q0-6 4.5-8z" fill="#2A3A22"/>
-            <rect x="234.0" y="313.1" width="9" height="9.2" fill="#E9DAB8" opacity=".55"/>
-            <path d="M256.0 292 h4 v11.2 q5.0 2 5.0 8 V332 h-14 V311.2 q0-6 5.0-8z" fill="#4A0E1A"/>
-            <rect x="253.0" y="314.0" width="10" height="8.8" fill="#E9DAB8" opacity=".55"/>
-            <path d="M275.0 284 h4 v13.4 q5.0 2 5.0 8 V332 h-14 V305.4 q0-6 5.0-8z" fill="#3A0B16"/>
-            <rect x="272.0" y="310.4" width="10" height="10.6" fill="#E9DAB8" opacity=".55"/>
-            <path d="M292.5 289 h4 v12.0 q4.5 2 4.5 8 V332 h-13 V309.0 q0-6 4.5-8z" fill="#1E3627"/>
-            <rect x="290.0" y="312.6" width="9" height="9.5" fill="#E9DAB8" opacity=".55"/>
-            <path d="M311.0 285 h4 v13.2 q4.0 2 4.0 8 V332 h-12 V306.2 q0-6 4.0-8z" fill="#5A4520"/>
-            <rect x="309.0" y="310.9" width="8" height="10.3" fill="#E9DAB8" opacity=".55"/>
-            <path d="M326.5 284 h4 v13.4 q4.5 2 4.5 8 V332 h-13 V305.4 q0-6 4.5-8z" fill="#3A0B16"/>
-            <rect x="324.0" y="310.4" width="9" height="10.6" fill="#E9DAB8" opacity=".55"/>
-            <path d="M344.5 287 h4 v12.6 q4.5 2 4.5 8 V332 h-13 V307.6 q0-6 4.5-8z" fill="#2A3A22"/>
-            <path d="M361.0 282 h4 v14.0 q5.0 2 5.0 8 V332 h-14 V304.0 q0-6 5.0-8z" fill="#2A3A22"/>
-            <rect x="358.0" y="309.5" width="10" height="11.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M378.5 291 h4 v11.5 q4.5 2 4.5 8 V332 h-13 V310.5 q0-6 4.5-8z" fill="#24110F"/>
-            <rect x="376.0" y="313.6" width="9" height="9.0" fill="#E9DAB8" opacity=".55"/>
-            <path d="M396.5 292 h4 v11.2 q4.5 2 4.5 8 V332 h-13 V311.2 q0-6 4.5-8z" fill="#24110F"/>
-            <rect x="394.0" y="314.0" width="9" height="8.8" fill="#E9DAB8" opacity=".55"/>
-            <path d="M412.5 287 h4 v12.6 q4.5 2 4.5 8 V332 h-13 V307.6 q0-6 4.5-8z" fill="#3A0B16"/>
-            <rect x="410.0" y="311.8" width="9" height="9.9" fill="#E9DAB8" opacity=".55"/>
-            <path d="M430.5 292 h4 v11.2 q4.5 2 4.5 8 V332 h-13 V311.2 q0-6 4.5-8z" fill="#4A0E1A"/>
-            <path d="M446.5 292 h4 v11.2 q4.5 2 4.5 8 V332 h-13 V311.2 q0-6 4.5-8z" fill="#4A0E1A"/>
-            <rect x="444.0" y="314.0" width="9" height="8.8" fill="#E9DAB8" opacity=".55"/>
-            <path d="M463.5 290 h4 v11.8 q4.5 2 4.5 8 V332 h-13 V309.8 q0-6 4.5-8z" fill="#3A0B16"/>
-            <rect x="124" y="332" width="352" height="5" fill="#7A4A2A"/>
-            </g>
-            <path d="M100 356 V220 A200 200 0 0 1 500 220 V356 H476 V220 A176 176 0 0 0 124 220 V356 Z" fill="#D8B77E"/>
-            <path d="M124.0 220.0L100.0 220.0M130.0 174.4L106.8 168.2M147.6 132.0L126.8 120.0M175.5 95.5L158.6 78.6M212.0 67.6L200.0 46.8M254.4 50.0L248.2 26.8M300.0 44.0L300.0 20.0M345.6 50.0L351.8 26.8M388.0 67.6L400.0 46.8M424.5 95.5L441.4 78.6M452.4 132.0L473.2 120.0M470.0 174.4L493.2 168.2M476.0 220.0L500.0 220.0M100 262h24M476 262h24M100 304h24M476 304h24" stroke="#B8955C" stroke-width="2"/>
-            <path d="M124 356 V220 A176 176 0 0 1 476 220 V356" fill="none" stroke="#B8955C" stroke-width="2"/>
-
-            <!-- tabla de madera -->
-            <ellipse cx="290" cy="410" rx="262" ry="20" fill="#3A1A12" opacity=".22"/>
-            <rect x="40" y="352" width="500" height="50" rx="12" fill="url(#wood)"/>
-            <path d="M58 366h300M120 378h390M70 390h220M330 390h190" stroke="#7A4A22" stroke-width="2" stroke-linecap="round" opacity=".45"/>
-            <circle cx="520" cy="377" r="7" fill="#6E431F"/>
-
-            <!-- llonguet -->
-            <ellipse cx="288" cy="357" rx="215" ry="11" fill="#3A1A12" opacity=".3"/>
-            <path d="M66 328c-2-56 98-98 222-100 128-2 226 36 222 96-2 30-72 40-222 40-150 0-220-10-222-36z" fill="url(#crust)"/>
-            <path d="M66 328c2 26 72 36 222 36 150 0 220-10 222-40-30 22-104 28-222 28S96 346 66 328z" fill="#8C4C1C" opacity=".38"/>
-            <!-- la grieta del llonguet: abierta en el centro y cerrada en las puntas -->
-            <path d="M104 296c56-40 196-58 370-26-50 16-132 36-232 38-60 1-110-2-138-12z" fill="url(#crumb)"/>
-            <g fill="#D9B074" opacity=".7">
-              <ellipse cx="180" cy="294" rx="5" ry="2.4"/><ellipse cx="236" cy="290" rx="4" ry="2"/>
-              <ellipse cx="300" cy="286" rx="5.5" ry="2.6"/><ellipse cx="356" cy="283" rx="4" ry="2"/>
-              <ellipse cx="270" cy="298" rx="3.4" ry="1.8"/><ellipse cx="410" cy="282" rx="3.6" ry="1.8"/>
-            </g>
-            <path d="M104 296c56-40 196-58 370-26" fill="none" stroke="#5E2C0F" stroke-width="5.5" stroke-linecap="round"/>
-            <path d="M116 280c60-36 190-50 340-28" fill="none" stroke="#FBDDA6" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-            <path d="M104 296c28 10 78 13 138 12 100-2 182-22 232-38" fill="none" stroke="#B26A2C" stroke-width="4" stroke-linecap="round"/>
-            <g fill="#FFF6E2" opacity=".6">
-              <circle cx="190" cy="250" r="2.2"/><circle cx="246" cy="240" r="1.6"/><circle cx="330" cy="236" r="2"/>
-              <circle cx="404" cy="244" r="1.5"/><circle cx="150" cy="268" r="1.4"/><circle cx="456" cy="258" r="1.8"/>
-              <circle cx="290" cy="244" r="1.3"/>
-            </g>
-
-            <!-- copa de vino -->
-            <g class="glass">
-              <rect class="wine-fill" x="500" y="170" width="104" height="80" fill="url(#wine)" clip-path="url(#bowl)"/>
-              <path d="M505 120c-3 62 6 112 47 124 41-12 50-62 47-124z" fill="#FFFFFF" fill-opacity=".18" stroke="#2B1216" stroke-opacity=".35" stroke-width="2.5"/>
-              <path d="M516 134c-2 40 4 74 22 92" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity=".6"/>
-              <rect x="549" y="244" width="6" height="140" fill="#FFFFFF" fill-opacity=".5" stroke="#2B1216" stroke-opacity=".3" stroke-width="2"/>
-              <ellipse cx="552" cy="388" rx="40" ry="8" fill="#FFFFFF" fill-opacity=".55" stroke="#2B1216" stroke-opacity=".3" stroke-width="2"/>
-            </g>
-
-            <!-- aceitunas -->
-            <g>
-              <ellipse cx="430" cy="350" rx="15" ry="11" fill="#6F7B30"/>
-              <ellipse cx="458" cy="356" rx="14" ry="10.5" fill="#5F6B27"/>
-              <ellipse cx="426" cy="346" rx="4" ry="2.6" fill="#B3BE66" opacity=".8"/>
-              <ellipse cx="454" cy="352" rx="3.6" ry="2.4" fill="#B3BE66" opacity=".8"/>
-            </g>
-          </svg>
-        </figure>
+        <div class="hero-photos">
+          <figure class="arc">
+            <picture>
+              <source type="image/webp" srcset="img/fotos/celler-arc-654.webp">
+              <img src="img/fotos/celler-arc-654.jpg" width="654" height="817" fetchpriority="high"
+                   alt="Estanterías de madera con botellas de Ribera del Duero y Rioja, cada una con su etiqueta de precio escrita a mano"
+                   data-i18n-attr="alt:altArc">
+            </picture>
+          </figure>
+          <figure class="taula-redona">
+            <picture>
+              <source type="image/webp" srcset="img/fotos/taula-redona-292.webp">
+              <img src="img/fotos/taula-redona-292.jpg" width="292" height="292"
+                   alt="Tabla redonda de madera con jamón, queso curado, embutido, pan tostado, aceite y piparras"
+                   data-i18n-attr="alt:altTaula">
+            </picture>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <!-- LA CARTA sobre el mantel de llengües ========================= -->
+    <!-- SA CARTA sobre el mantel de llengües ========================= -->
     <section class="mantel" id="carta" aria-labelledby="carta-title">
       <div class="carta">
         <header class="carta-head">
-          <h2 id="carta-title" data-i18n="cartaTitle">La carta</h2>
+          <h2 id="carta-title" lang="ca">Sa carta</h2>
           <p data-i18n="cartaNote">La pizarra cambia según el mercado. Pregunta en la barra por el llonguet del día.</p>
         </header>
 
         <div class="carta-section">
           <div class="carta-intro">
-            <h3 translate="no">Llonguets</h3>
-            <p data-i18n="llonguetIntro">El panecillo de Palma de toda la vida: corteza fina que cruje, miga tierna y su grieta en el centro. Lo abrimos y lo rellenamos al momento.</p>
+            <h3 lang="ca">Per picar</h3>
+            <p data-i18n="picarIntro">Para abrir boca con la copa en la mano.</p>
+            <figure class="carta-foto">
+              <picture>
+                <source type="image/webp" srcset="img/fotos/gildes-310.webp">
+                <img src="img/fotos/gildes-310.jpg" width="310" height="413" loading="lazy"
+                     alt="Gildas y banderillas de aceituna, anchoa, piparra y champiñón relleno con palillos de Es Racó"
+                     data-i18n-attr="alt:altGildes">
+              </picture>
+            </figure>
           </div>
           <ul class="dishes">
             <li class="dish">
-              <span class="dish-name" translate="no">Sobrassada i mel</span>
-              <span class="dish-price" data-price="5.5">5,50&nbsp;€</span>
-              <span class="dish-desc" data-i18n="d_sobrassada">Sobrasada de Mallorca templada con un hilo de miel.</span>
+              <span class="dish-name" translate="no">Gildes i banderilles</span>
+              <span class="dish-desc" data-i18n="d_gildes">Aceituna, anchoa, piparra, alcachofa y champiñón relleno, pinchados en su palillo.</span>
             </li>
             <li class="dish">
-              <span class="dish-name" translate="no">Camaiot</span>
-              <span class="dish-price" data-price="6">6,00&nbsp;€</span>
-              <span class="dish-desc" data-i18n="d_camaiot">Embutido mallorquín de cerdo negro, con tomàtiga de ramellet restregada.</span>
+              <span class="dish-name" translate="no">Croquetes de pernil</span>
+              <span class="dish-desc" data-i18n="d_croquetes">Croquetas de jamón, crujientes por fuera y cremosas por dentro.</span>
             </li>
             <li class="dish">
-              <span class="dish-name" translate="no">Pernil i formatge de Maó</span>
-              <span class="dish-price" data-price="6.5">6,50&nbsp;€</span>
-              <span class="dish-desc" data-i18n="d_pernil">Jamón curado y queso de Mahón semicurado.</span>
+              <span class="dish-name" translate="no">Calamars a l'andalusa</span>
+              <span class="dish-desc" data-i18n="d_calamars">Calamares rebozados, con su limón.</span>
             </li>
             <li class="dish">
-              <span class="dish-name" translate="no">Porc desfilat</span>
-              <span class="dish-price" data-price="7.5">7,50&nbsp;€</span>
-              <span class="dish-desc" data-i18n="d_porc">Cerdo deshilachado a baja temperatura, jugoso y con su salsa.</span>
-            </li>
-            <li class="dish">
-              <span class="dish-name" translate="no">Llom amb pebres</span>
-              <span class="dish-price" data-price="7">7,00&nbsp;€</span>
-              <span class="dish-desc" data-i18n="d_llom">Lomo a la plancha con pimientos asados.</span>
-            </li>
-            <li class="dish">
-              <span class="dish-name" translate="no">Verat amb tomàtiga</span>
-              <span class="dish-price" data-price="6.5">6,50&nbsp;€</span>
-              <span class="dish-desc" data-i18n="d_verat">Caballa en aceite, tomate y alcaparras, como en los bares de antes.</span>
-            </li>
-            <li class="dish">
-              <span class="dish-name" translate="no">Formatge, tomàtiga i alfàbrega</span>
-              <span class="dish-price" data-price="5.5">5,50&nbsp;€</span>
-              <span class="dish-desc" data-i18n="d_formatge">Queso de Mahón, tomate y albahaca. Vegetariano.</span>
+              <span class="dish-name" translate="no">Peixet fregit</span>
+              <span class="dish-desc" data-i18n="d_peixet">Pescaíto frito.</span>
             </li>
           </ul>
         </div>
 
         <div class="carta-section">
           <div class="carta-intro">
-            <h3 data-i18n="compartirTitle">Para compartir</h3>
-            <p data-i18n="compartirIntro">Tablas de madera para el centro de la mesa, con pan moreno, aceite de la isla, aceitunas y piparras.</p>
+            <h3 lang="ca">Ses taules</h3>
+            <p data-i18n="taulesIntro">Tablas de madera para el centro de la mesa, con pan tostado, aceite, aceitunas y piparras.</p>
+            <figure class="carta-foto">
+              <picture>
+                <source type="image/webp" srcset="img/fotos/taula-formatges-308.webp">
+                <img src="img/fotos/taula-formatges-308.jpg" width="308" height="413" loading="lazy"
+                     alt="Tabla de madera con cuñas de queso curado, pan tostado, aceite, aceitunas y piparras"
+                     data-i18n-attr="alt:altFormatges">
+              </picture>
+            </figure>
           </div>
           <ul class="dishes">
             <li class="dish">
-              <span class="dish-name" data-i18n="t_embotits">Tabla de embutidos mallorquines</span>
-              <span class="dish-price" data-price="15">15,00&nbsp;€</span>
-              <span class="dish-desc" data-i18n="t_embotitsDesc">Sobrasada, camaiot, botifarró y llonganissa.</span>
+              <span class="dish-name" translate="no">Taula d'embotits i formatge</span>
+              <span class="dish-desc" data-i18n="d_taulaMixta">Jamón, queso curado, salchichón y chorizo.</span>
             </li>
             <li class="dish">
-              <span class="dish-name" data-i18n="t_formatges">Tabla de quesos</span>
-              <span class="dish-price" data-price="15">15,00&nbsp;€</span>
-              <span class="dish-desc" data-i18n="t_formatgesDesc">Mahón curado y semicurado, oveja y queso del mes.</span>
+              <span class="dish-name" translate="no">Taula de formatges</span>
+              <span class="dish-desc" data-i18n="d_taulaFormatges">Cuñas de queso curado y semicurado.</span>
             </li>
             <li class="dish">
-              <span class="dish-name" data-i18n="t_mixta">Tabla mixta de la casa</span>
-              <span class="dish-price" data-price="17">17,00&nbsp;€</span>
-              <span class="dish-desc" data-i18n="t_mixtaDesc">Lo mejor de las dos tablas para dos o tres personas.</span>
+              <span class="dish-name" translate="no">Taula med especial</span>
+              <span class="dish-desc" data-i18n="d_taulaMed">Nuestra tabla mediterránea. Pregunta qué lleva hoy.</span>
             </li>
             <li class="dish">
               <span class="dish-name" translate="no">Pa amb oli</span>
-              <span class="dish-price" data-price="9.5">9,50&nbsp;€</span>
-              <span class="dish-desc" data-i18n="t_paamboli">Pan moreno, tomàtiga de ramellet, aceite y sal. Con jamón o con queso.</span>
-            </li>
-            <li class="dish">
-              <span class="dish-name" translate="no">Olives trencades</span>
-              <span class="dish-price" data-price="3.5">3,50&nbsp;€</span>
-              <span class="dish-desc" data-i18n="t_olives">Aceitunas partidas aliñadas a la mallorquina, con hinojo.</span>
+              <span class="dish-desc" data-i18n="d_paamboli">Pan moreno, tomàtiga de ramellet, aceite y sal. Con jamón o con queso.</span>
             </li>
           </ul>
         </div>
 
         <div class="carta-section">
           <div class="carta-intro">
-            <h3 data-i18n="postresTitle">Postres</h3>
+            <h3 lang="ca">Llonguets</h3>
+            <p data-i18n="llonguetIntro">El panecillo de Palma de toda la vida: corteza fina que cruje y miga tierna. Lo abrimos y lo rellenamos al momento.</p>
+            <figure class="carta-foto carta-foto-wide">
+              <picture>
+                <source type="image/webp" srcset="img/fotos/llonguet-606.webp">
+                <img src="img/fotos/llonguet-606.jpg" width="606" height="338" loading="lazy"
+                     alt="Llonguet de carrillera abierto por la mitad, con aceitunas al lado"
+                     data-i18n-attr="alt:altLlonguet">
+              </picture>
+            </figure>
           </div>
           <ul class="dishes">
             <li class="dish">
-              <span class="dish-name" data-i18n="p_cheesecake">Tarta de queso</span>
-              <span class="dish-price" data-price="5.5">5,50&nbsp;€</span>
-              <span class="dish-desc" data-i18n="p_cheesecakeDesc">Cremosa, con coulis de frutos rojos.</span>
+              <span class="dish-name" translate="no">Galta</span>
+              <span class="dish-desc" data-i18n="d_carrillera">Carrillera tierna y melosa.</span>
+            </li>
+            <li class="dish">
+              <span class="dish-name" translate="no">Llom ibèric amb tòfona i parmesà</span>
+              <span class="dish-desc" data-i18n="d_llom">Lomo ibérico con trufa y parmigiano.</span>
+            </li>
+            <li class="dish">
+              <span class="dish-name" translate="no">Porc desfilat</span>
+              <span class="dish-desc" data-i18n="d_porc">Cerdo desmigado, jugoso y con su salsa.</span>
+            </li>
+            <li class="dish">
+              <span class="dish-name" translate="no">Llonguet des dia</span>
+              <span class="dish-desc" data-i18n="d_delDia">Cambia según el mercado. Pregunta en la barra.</span>
             </li>
           </ul>
         </div>
 
-        <p class="carta-foot" data-i18n="cartaFoot">IVA incluido. Si tienes alguna alergia o intolerancia, dínoslo y te contamos qué lleva cada plato.</p>
-      </div>
-    </section>
-
-    <!-- VINOS: pared de cajas de vino ================================= -->
-    <section class="bodega" id="vinos" aria-labelledby="vinos-title">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="vinos-title" data-i18n="vinosTitle">La bodega</h2>
-          <p data-i18n="vinosIntro">Las paredes del local están forradas con tablas de cajas de vino, y las estanterías no paran de llenarse. Por copa o por botella, y si una te gusta, te la puedes llevar a casa.</p>
-        </div>
-        <ul class="crates">
-          <li class="crate">
-            <span class="stamp" translate="no">D.O. Binissalem</span>
-            <h3 data-i18n="c_binissalem">Tintos de la isla</h3>
-            <p data-i18n="c_binissalemDesc">Mantonegro y Callet, las uvas de Mallorca, del centro de la isla y de Pla i Llevant.</p>
-          </li>
-          <li class="crate">
-            <span class="stamp" translate="no">Vi de la Terra Mallorca</span>
-            <h3 data-i18n="c_blancs">Blancos y rosados</h3>
-            <p data-i18n="c_blancsDesc">Prensal y Giró Ros: frescos, salinos y pensados para el embutido.</p>
-          </li>
-          <li class="crate">
-            <span class="stamp" translate="no">Rioja / Ribera</span>
-            <h3 data-i18n="c_peninsula">De la península</h3>
-            <p data-i18n="c_peninsulaDesc">Clásicos de Rioja y Ribera del Duero y alguna sorpresa que vamos descubriendo.</p>
-          </li>
-          <li class="crate">
-            <span class="stamp" translate="no">Vermut</span>
-            <h3 data-i18n="c_vermut">Vermut y aperitivo</h3>
-            <p data-i18n="c_vermutDesc">Con hielo, naranja y una aceituna, para empezar la noche.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CESTAS Y PRODUCTOS ============================================ -->
-    <section class="cestas" id="cestas" aria-labelledby="cestas-title">
-      <div class="wrap cestas-grid">
-        <div>
-          <h2 id="cestas-title" data-i18n="cestasTitle">Cestas para regalar y producto para llevar</h2>
-          <p data-i18n="cestasIntro">También somos tienda. Vendemos los embutidos, quesos y vinos que servimos, y preparamos lotes y cestas a medida, envueltos en roba de llengües: para Navidad, cumpleaños o empresas.</p>
-          <ul class="ticks">
-            <li data-i18n="cestas1">Sobrasada, camaiot y embutido de la isla</li>
-            <li data-i18n="cestas2">Quesos de Mahón y de oveja</li>
-            <li data-i18n="cestas3">Vinos de Mallorca y de la península</li>
-            <li data-i18n="cestas4">Aceite, conservas y productos artesanos</li>
+        <div class="carta-section">
+          <div class="carta-intro">
+            <h3 lang="ca">Ses postres</h3>
+            <p data-i18n="postresIntro">Elige tu tarta de queso o pide varias para compartir.</p>
+            <figure class="carta-foto">
+              <picture>
+                <source type="image/webp" srcset="img/fotos/tartes-520.webp">
+                <img src="img/fotos/tartes-520.jpg" width="520" height="650" loading="lazy"
+                     alt="Cuatro porciones de tarta de queso: clásica con mermelada de frutos rojos, pistacho, chocolate y frutos rojos con merengue"
+                     data-i18n-attr="alt:altTartes">
+              </picture>
+            </figure>
+          </div>
+          <ul class="dishes">
+            <li class="dish">
+              <span class="dish-name" translate="no">Ses nostres quatre tartes de formatge</span>
+              <span class="dish-desc" data-i18n="d_tartes">Clásica con frutos rojos, pistacho, chocolate, y frutos rojos con merengue.</span>
+            </li>
           </ul>
-          <a class="btn btn-primary" href="tel:+34656558806" data-i18n="cestasCta">Encargar una cesta</a>
         </div>
-        <figure class="basket" aria-hidden="true">
-          <svg viewBox="0 0 320 280">
-            <defs>
-              <pattern id="llengues-mini" width="32" height="88" patternUnits="userSpaceOnUse">
-                <image href="img/llengues.svg" width="32" height="88"/>
-              </pattern>
-            </defs>
-            <ellipse cx="160" cy="262" rx="130" ry="12" fill="#3A1A12" opacity=".2"/>
-            <path d="M70 70c0-58 180-58 180 0" fill="none" stroke="#9B6A35" stroke-width="12" stroke-linecap="round"/>
-            <!-- dos botellas de vino asomando -->
-            <path d="M144 30h10v18c0 6 10 10 10 22v52h-30V70c0-12 10-16 10-22z" fill="#2B1216"/>
-            <rect x="138" y="78" width="22" height="26" rx="2" fill="#F6EFE2"/>
-            <rect x="142" y="84" width="14" height="3" fill="#A3182F"/>
-            <rect x="143" y="24" width="12" height="9" rx="2" fill="#A3182F"/>
-            <path d="M178 46h9v16c0 5 9 9 9 19v41h-27V81c0-10 9-14 9-19z" fill="#3E5B2E"/>
-            <rect x="172" y="88" width="20" height="20" rx="2" fill="#E5CD9E"/>
-            <!-- cesta y roba de llengües -->
-            <path d="M48 120l112-24 112 24-14 124c-2 14-12 20-26 20H88c-14 0-24-6-26-20z" fill="#C8955A"/>
-            <path d="M60 150h200M64 180h192M68 210h184M72 240h176" stroke="#9B6A35" stroke-width="5" opacity=".7"/>
-            <path d="M48 120l112-24 112 24-10 34c-30-10-70-14-102-14s-72 4-102 14z" fill="url(#llengues-mini)"/>
-          </svg>
+
+        <p class="carta-foot" data-i18n="cartaFoot">Pregunta precios y alérgenos en la barra: te contamos qué lleva cada plato.</p>
+      </div>
+    </section>
+
+    <!-- SOPARS DE GRUP ================================================ -->
+    <section class="grups" id="grups" aria-labelledby="grups-title">
+      <div class="wrap grups-grid">
+        <div>
+          <h2 id="grups-title" lang="ca">Sopars de grup i d'empresa</h2>
+          <p class="grups-lead" data-i18n="grupsLead">Menú de Navidad a partir de 15 personas, para compartir y con la bebida incluida.</p>
+          <ul class="grups-list">
+            <li>
+              <strong data-i18n="g_picadaT">Picada para compartir</strong>
+              <span data-i18n="g_picada">Croquetas de jamón, calamares a la andaluza, y pescaíto frito o tabla mediterránea especial.</span>
+            </li>
+            <li>
+              <strong data-i18n="g_llonguetT">Un llonguet por persona</strong>
+              <span data-i18n="g_llonguet">Mitad de carrillera y mitad de lomo ibérico con trufa y parmigiano.</span>
+            </li>
+            <li>
+              <strong data-i18n="g_postresT">Trío de tartas de queso</strong>
+              <span data-i18n="g_postres">Para compartir en el centro de la mesa.</span>
+            </li>
+            <li>
+              <strong data-i18n="g_begudaT">Bebida incluida</strong>
+              <span data-i18n="g_beguda">Caña, agua y refresco, y una botella de Ribera del Duero o Verdejo cada dos personas.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="grups-price">
+          <p class="price-badge">
+            <span class="price-num">35&nbsp;€</span>
+            <span class="price-per" data-i18n="perPersona">por persona</span>
+          </p>
+          <a class="btn btn-light" href="tel:+34656558806" data-i18n="grupsCta">Reservar la cena</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ES CELLER ===================================================== -->
+    <section class="celler" id="celler" aria-labelledby="celler-title">
+      <div class="wrap celler-grid">
+        <div class="celler-copy">
+          <h2 id="celler-title" lang="ca">Es celler</h2>
+          <p class="section-lead" data-i18n="cellerLead">Ribera del Duero y Rioja, sobre todo, y blancos como el verdejo. Cada botella lleva su etiqueta escrita a mano con el precio: bébela aquí o llévatela a casa.</p>
+          <p><span data-i18n="cellerNames">Encontrarás nombres como</span> <span translate="no">Pesquera, Emilio Moro, Matarromera, Malleolus, Luis Cañas</span> <span data-i18n="cellerOr">o</span> <span translate="no">Pago de los Capellanes</span>.</p>
+          <p data-i18n="cellerCestas">También preparamos lotes y cestas para regalar, con vino, embutido y queso.</p>
+          <a class="btn btn-light" href="tel:+34656558806" data-i18n="cellerCta">Encargar una cesta</a>
+        </div>
+        <figure class="celler-foto">
+          <picture>
+            <source type="image/webp" srcset="img/fotos/celler-640.webp 640w, img/fotos/celler-1141.webp 1141w" sizes="(max-width: 52rem) 100vw, 55vw">
+            <img src="img/fotos/celler-1141.jpg" srcset="img/fotos/celler-640.jpg 640w, img/fotos/celler-1141.jpg 1141w" sizes="(max-width: 52rem) 100vw, 55vw"
+                 width="1141" height="840" loading="lazy"
+                 alt="Botellas de vino en la estantería con etiquetas de cartón escritas a mano con el precio"
+                 data-i18n-attr="alt:altCeller">
+          </picture>
         </figure>
+      </div>
+    </section>
+
+    <!-- SA TERRASSETA ================================================= -->
+    <section class="terrassa" id="terrassa" aria-labelledby="terrassa-title">
+      <div class="wrap terrassa-grid">
+        <figure class="terrassa-foto">
+          <picture>
+            <source type="image/webp" srcset="img/fotos/terrassa-640.webp 640w, img/fotos/terrassa-1117.webp 1117w" sizes="(max-width: 52rem) 100vw, 60vw">
+            <img src="img/fotos/terrassa-1117.jpg" srcset="img/fotos/terrassa-640.jpg 640w, img/fotos/terrassa-1117.jpg 1117w" sizes="(max-width: 52rem) 100vw, 60vw"
+                 width="1117" height="730" loading="lazy"
+                 alt="Terraza con pérgola de madera, suelo de barro y sillas de director granates con el logo de Es Racó"
+                 data-i18n-attr="alt:altTerrassa">
+          </picture>
+        </figure>
+        <div class="terrassa-copy">
+          <h2 id="terrassa-title" lang="ca">Sa terrasseta</h2>
+          <p class="section-lead" data-i18n="terrassaLead">Pérgola de madera, suelo de barro, luces colgadas y nuestras sillas granates. Para las noches de buen tiempo en Son Verí Nou.</p>
+          <p class="terrassa-quote" lang="ca">Vos esperam.</p>
+        </div>
       </div>
     </section>
 
     <!-- OPINIONES ===================================================== -->
     <section class="opiniones" aria-labelledby="op-title">
       <div class="wrap">
-        <h2 id="op-title" data-i18n="opTitle">Lo que dicen de nosotros</h2>
+        <h2 id="op-title" lang="ca">Què diuen de nosaltres</h2>
         <div class="op-grid">
           <dl class="ratings">
             <div>
@@ -534,11 +377,11 @@
       </div>
     </section>
 
-    <!-- VISÍTANOS: persiana verde ===================================== -->
+    <!-- VINE A VEURE'NS: persiana verde =============================== -->
     <section class="visita" id="visita" aria-labelledby="visita-title">
       <div class="wrap visita-grid">
         <div>
-          <h2 id="visita-title" data-i18n="visitaTitle">Visítanos</h2>
+          <h2 id="visita-title" lang="ca">Vine a veure'ns</h2>
           <address>
             <span translate="no">Es Racó de Son Verí</span><br>
             <span data-i18n="addr1">Carrer Rambla, 1, local 2 (esquina con C/ Ametler)</span><br>
@@ -558,7 +401,7 @@
         </div>
 
         <div>
-          <h3 data-i18n="horarioTitle">Horario</h3>
+          <h3 lang="ca">Horari</h3>
           <table class="hours">
             <caption class="sr-only" data-i18n="horarioTitle">Horario</caption>
             <tbody>
@@ -585,12 +428,12 @@
 
   <footer class="site-footer">
     <div class="wrap footer-row">
-      <p class="logo logo-footer" translate="no"><span class="logo-es">es</span><span class="logo-raco">Racó</span><span class="logo-sub">de Son Verí</span></p>
+      <img class="footer-logo" src="img/logo-blanco.png" width="583" height="462" alt="Es Racó de Son Verí" loading="lazy">
       <ul class="social">
         <li><a href="https://www.instagram.com/esracodesonveri/" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.facebook.com/esracodesonveri/" target="_blank" rel="noopener">Facebook</a></li>
       </ul>
-      <p class="footer-note"><span data-i18n="footerBon">Bon profit.</span> © <span data-year>2026</span> Es Racó de Son Verí</p>
+      <p class="footer-note"><span lang="ca">Bon profit.</span> © <span data-year>2026</span> Es Racó de Son Verí</p>
     </div>
   </footer>
 

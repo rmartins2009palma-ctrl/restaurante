@@ -116,3 +116,25 @@ Alineación a la izquierda; la carta se centra sobre el mantel.
   y el acento es grana de llengües, no terracota. Ambos vienen del local, no de una plantilla.
 - *Tarjetas iguales con sombra*: la carta es una sola hoja continua con puntos guía, no una rejilla de tarjetas.
 - *Animaciones de entrada por sección*: eliminadas. Solo queda la copa.
+
+## 4. Versión 2 (18/11/2026): fotos reales y más mallorquín
+
+Cambios pedidos: usar sus fotos, menos ilustraciones, un estilo más mallorquín y el idioma mallorquín.
+
+**Material del local** (5 imágenes de su Instagram): tablas de embutido y queso sobre piedra,
+gildas con palillos de Es Racó, sus cuatro tartas de queso, la estantería de vinos con etiquetas de precio escritas a mano,
+la «nueva terrazita» con sillas de director granates y el cartel del menú de Navidad (35 €, desde 15 personas).
+
+**Qué cambió:**
+- Fuera los dibujos (llonguet, arco y cesta en SVG). Ahora todo son fotos suyas, recortadas sin la interfaz de Instagram.
+- Su **logo real** (extraído del cartel), en versión oscura para la cabecera y blanca para el pie.
+- El color de acento pasa a ser el **rojo de la copa del logo** (`#9E1221`) y el **granate de las sillas** (`#6E0E19`).
+  Desaparece el fucsia, que no era su color.
+- Portada con su bodega dentro de un **arco de mig punt** de marès, con juntas de dovelas hechas en CSS,
+  y la tabla de embutido redonda sobre el mantel de llengües.
+- **Mallorquín**: idioma completo (con article salat: *sa carta*, *es celler*, *vos esperam*) y además
+  todos los títulos de sección y el titular van siempre en mallorquín, en cualquier idioma, con una traducción debajo del titular.
+- Carta real: gildes, croquetes, calamars, peixet fregit, taules, llonguets de galta, llom ibèric amb tòfona, porc desfilat,
+  pa amb oli y las cuatro tartas de queso. **Sin precios** hasta que el local los confirme.
+- Secciones nuevas: **Sopars de grup i d'empresa** (menú de Navidad de 35 €), **Es celler** con la foto de las etiquetas
+  y **Sa terrasseta**.
