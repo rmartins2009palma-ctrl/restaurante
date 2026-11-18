@@ -21,6 +21,16 @@
   <link rel="preload" href="fonts/alegreya-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    /* Activa las animaciones de las fotos solo si el navegador puede y el usuario no pide menos movimiento.
+       Si main.js no llegara a cargar, a los 3 s se muestra todo igualmente. */
+    (function (d) {
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        d.classList.add('js-reveal');
+        setTimeout(function () { if (!d.dataset.ready) d.classList.remove('js-reveal'); }, 3000);
+      }
+    })(document.documentElement);
+  </script>
 
   <script type="application/ld+json">
   {
@@ -129,7 +139,7 @@
                    data-i18n-attr="alt:altArc">
             </picture>
           </figure>
-          <figure class="taula-redona">
+          <figure class="taula-redona" style="--ph:#9a7b68">
             <picture>
               <source type="image/webp" srcset="img/fotos/taula-redona-292.webp">
               <img src="img/fotos/taula-redona-292.jpg" width="292" height="292"
@@ -153,13 +163,14 @@
           <div class="carta-intro">
             <h3 lang="ca">Per picar</h3>
             <p data-i18n="picarIntro">Para abrir boca con la copa en la mano.</p>
-            <figure class="carta-foto">
+            <figure class="carta-foto foto foto-mat reveal" style="--ph:#877757">
               <picture>
                 <source type="image/webp" srcset="img/fotos/gildes-310.webp">
                 <img src="img/fotos/gildes-310.jpg" width="310" height="413" loading="lazy"
                      alt="Gildas y banderillas de aceituna, anchoa, piparra y champiñón relleno con palillos de Es Racó"
                      data-i18n-attr="alt:altGildes">
               </picture>
+              <figcaption lang="ca">Gildes amb escuradents de sa casa</figcaption>
             </figure>
           </div>
           <ul class="dishes">
@@ -186,13 +197,14 @@
           <div class="carta-intro">
             <h3 lang="ca">Ses taules</h3>
             <p data-i18n="taulesIntro">Tablas de madera para el centro de la mesa, con pan tostado, aceite, aceitunas y piparras.</p>
-            <figure class="carta-foto">
+            <figure class="carta-foto foto foto-mat reveal" style="--ph:#95897b">
               <picture>
                 <source type="image/webp" srcset="img/fotos/taula-formatges-308.webp">
                 <img src="img/fotos/taula-formatges-308.jpg" width="308" height="413" loading="lazy"
                      alt="Tabla de madera con cuñas de queso curado, pan tostado, aceite, aceitunas y piparras"
                      data-i18n-attr="alt:altFormatges">
               </picture>
+              <figcaption lang="ca">Taula de formatges</figcaption>
             </figure>
           </div>
           <ul class="dishes">
@@ -219,13 +231,14 @@
           <div class="carta-intro">
             <h3 lang="ca">Llonguets</h3>
             <p data-i18n="llonguetIntro">El panecillo de Palma de toda la vida: corteza fina que cruje y miga tierna. Lo abrimos y lo rellenamos al momento.</p>
-            <figure class="carta-foto carta-foto-wide">
+            <figure class="carta-foto carta-foto-wide foto foto-mat reveal" style="--ph:#815836">
               <picture>
                 <source type="image/webp" srcset="img/fotos/llonguet-606.webp">
                 <img src="img/fotos/llonguet-606.jpg" width="606" height="338" loading="lazy"
                      alt="Llonguet de carrillera abierto por la mitad, con aceitunas al lado"
                      data-i18n-attr="alt:altLlonguet">
               </picture>
+              <figcaption lang="ca">Llonguet de galta</figcaption>
             </figure>
           </div>
           <ul class="dishes">
@@ -252,13 +265,14 @@
           <div class="carta-intro">
             <h3 lang="ca">Ses postres</h3>
             <p data-i18n="postresIntro">Elige tu tarta de queso o pide varias para compartir.</p>
-            <figure class="carta-foto">
+            <figure class="carta-foto foto foto-mat reveal" style="--ph:#a9967f">
               <picture>
                 <source type="image/webp" srcset="img/fotos/tartes-520.webp">
                 <img src="img/fotos/tartes-520.jpg" width="520" height="650" loading="lazy"
                      alt="Cuatro porciones de tarta de queso: clásica con mermelada de frutos rojos, pistacho, chocolate y frutos rojos con merengue"
                      data-i18n-attr="alt:altTartes">
               </picture>
+              <figcaption lang="ca">Ses quatre tartes</figcaption>
             </figure>
           </div>
           <ul class="dishes">
@@ -318,7 +332,7 @@
           <p data-i18n="cellerCestas">También preparamos lotes y cestas para regalar, con vino, embutido y queso.</p>
           <a class="btn btn-light" href="tel:+34656558806" data-i18n="cellerCta">Encargar una cesta</a>
         </div>
-        <figure class="celler-foto">
+        <figure class="celler-foto foto foto-marc reveal" style="--ph:#514537">
           <picture>
             <source type="image/webp" srcset="img/fotos/celler-640.webp 640w, img/fotos/celler-1141.webp 1141w" sizes="(max-width: 52rem) 100vw, 55vw">
             <img src="img/fotos/celler-1141.jpg" srcset="img/fotos/celler-640.jpg 640w, img/fotos/celler-1141.jpg 1141w" sizes="(max-width: 52rem) 100vw, 55vw"
@@ -326,6 +340,7 @@
                  alt="Botellas de vino en la estantería con etiquetas de cartón escritas a mano con el precio"
                  data-i18n-attr="alt:altCeller">
           </picture>
+          <figcaption lang="ca">Ses etiquetes, escrites a mà.</figcaption>
         </figure>
       </div>
     </section>
@@ -333,7 +348,7 @@
     <!-- SA TERRASSETA ================================================= -->
     <section class="terrassa" id="terrassa" aria-labelledby="terrassa-title">
       <div class="wrap terrassa-grid">
-        <figure class="terrassa-foto">
+        <figure class="terrassa-foto foto foto-marc reveal" style="--ph:#834e3d">
           <picture>
             <source type="image/webp" srcset="img/fotos/terrassa-640.webp 640w, img/fotos/terrassa-1117.webp 1117w" sizes="(max-width: 52rem) 100vw, 60vw">
             <img src="img/fotos/terrassa-1117.jpg" srcset="img/fotos/terrassa-640.jpg 640w, img/fotos/terrassa-1117.jpg 1117w" sizes="(max-width: 52rem) 100vw, 60vw"
@@ -341,6 +356,7 @@
                  alt="Terraza con pérgola de madera, suelo de barro y sillas de director granates con el logo de Es Racó"
                  data-i18n-attr="alt:altTerrassa">
           </picture>
+          <figcaption lang="ca">Sa terrasseta, a s’horabaixa.</figcaption>
         </figure>
         <div class="terrassa-copy">
           <h2 id="terrassa-title" lang="ca">Sa terrasseta</h2>

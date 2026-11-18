@@ -183,6 +183,30 @@
     });
   }
 
+  /* ---------- Fotos: fundido al cargar y cortina al hacer scroll --- */
+  const root = document.documentElement;
+  root.dataset.ready = '1';   // avisa al script de la cabecera de que todo ha cargado
+
+  document.querySelectorAll('.foto img, .arc img, .taula-redona img').forEach((img) => {
+    const done = () => img.classList.add('is-loaded');
+    if (img.complete && img.naturalWidth) done();
+    else {
+      img.addEventListener('load', done, { once: true });
+      img.addEventListener('error', done, { once: true });
+    }
+  });
+
+  if (root.classList.contains('js-reveal')) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  }
+
   /* ---------- Año del pie ----------------------------------------- */
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());

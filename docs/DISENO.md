@@ -138,3 +138,19 @@ la «nueva terrazita» con sillas de director granates y el cartel del menú de 
   pa amb oli y las cuatro tartas de queso. **Sin precios** hasta que el local los confirme.
 - Secciones nuevas: **Sopars de grup i d'empresa** (menú de Navidad de 35 €), **Es celler** con la foto de las etiquetas
   y **Sa terrasseta**.
+
+## 5. Acabado de las fotos (18/11/2026)
+
+Para que las fotos no parezcan recortes pegados:
+- **Acabado común**: cada foto aparece sobre su propio color medio mientras carga, con fundido;
+  lleva un filo de luz de 1 px, un viñeteado interior suave y un velo cálido (`soft-light`) que iguala
+  el tono de fotos de origen distinto (stories, collage, cartel).
+- **Carta**: las fotos son copias sobre el papel, con paspartú blanco, pie de foto en mallorquín y un giro leve
+  alterno (±0,8°). Con el ratón se enderezan y se levantan.
+- **Bodega y terraza**: filete fino desplazado 10 px, como un cuadro de galería, sombra larga y pie de foto.
+  Con el ratón, zoom lento dentro del marco.
+- **Arco de la portada**: piedra más fina, con luz arriba. Al cargar, la foto sube desde abajo sobre un interior oscuro
+  y la tabla redonda entra girando.
+- **Al hacer scroll**: las fotos grandes se descubren como una cortina y las de la carta se posan.
+- **Accesibilidad**: con «reducir movimiento» o sin JavaScript no hay animaciones y todas las fotos se ven desde el principio.
+  Si `main.js` no cargara, a los 3 s se muestra todo igualmente.
