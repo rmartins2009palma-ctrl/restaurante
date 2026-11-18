@@ -195,3 +195,21 @@ Revisado en 1920, 1440, 1366, 1024, 768 y 390 px.
 - **Terraza**: el texto queda centrado exactamente con la foto (el pie de foto cuelga debajo y no cuenta para centrar)
   y desaparece el hueco grande que había debajo.
 - **Fotos**: fuera el viñeteado interior, que ensuciaba los bordes; queda solo un velo cálido muy ligero.
+
+## 10. Un fondo propio por sección (18/11/2026)
+
+Cada sección tiene su propio fondo liso, alternando claro y oscuro, de modo que dos secciones seguidas
+nunca comparten color ni se parecen (lo que antes quedaba feo era juntar tonos parecidos o usar degradados):
+
+| Sección | Fondo |
+|---|---|
+| Portada | arena `#E5CD9E` (marès) |
+| Carta | granate `#6E0E19` (sillas) |
+| Sopars de grup | crema `#F3EADB` (cal), círculo de 35 € en granate como en su cartel |
+| Bodega | vino `#2B1216` |
+| Terraza | barro claro `#E8CBB0` (suelo de la terraza) |
+| Opiniones | verde persiana `#2F5642` |
+| Horario y ubicación | crema `#F3EADB` |
+| Pie | vino `#2B1216` |
+
+Textos, botones, líneas y el foco del teclado se adaptan al fondo de cada sección.
