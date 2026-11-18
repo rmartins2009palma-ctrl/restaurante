@@ -147,10 +147,10 @@ Para que las fotos no parezcan recortes pegados:
   el tono de fotos de origen distinto (stories, collage, cartel).
 - **Carta**: las fotos son copias sobre el papel, con paspartú blanco, pie de foto en mallorquín y un giro leve
   alterno (±0,8°). Con el ratón se enderezan y se levantan.
-- **Bodega y terraza**: filete fino desplazado 10 px, como un cuadro de galería, sombra larga y pie de foto.
-  Con el ratón, zoom lento dentro del marco.
+- **Bodega y terraza**: sin contorno ni cortina (a petición del cliente): esquinas suaves, sombra larga y pie de foto.
+  Con el ratón, zoom lento dentro de la foto.
 - **Arco de la portada**: piedra más fina, con luz arriba. Al cargar, la foto sube desde abajo sobre un interior oscuro
   y la tabla redonda entra girando.
-- **Al hacer scroll**: las fotos grandes se descubren como una cortina y las de la carta se posan.
+- **Al hacer scroll**: solo las fotos de la carta se posan sobre el papel.
 - **Accesibilidad**: con «reducir movimiento» o sin JavaScript no hay animaciones y todas las fotos se ven desde el principio.
   Si `main.js` no cargara, a los 3 s se muestra todo igualmente.
