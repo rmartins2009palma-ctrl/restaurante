@@ -27,7 +27,7 @@ Y abrir <http://localhost:8080>. Para otro idioma: `?lang=ca` (mallorquí), `?la
 | `css/fonts.css`, `fonts/` | Fuentes Young Serif y Alegreya Sans, alojadas en la web (licencia OFL) |
 | `img/fotos/` | Fotos del local (de su Instagram) en WebP y JPG, en dos tamaños |
 | `img/logo.png`, `img/logo-blanco.png` | Logo, extraído del cartel de Navidad (versión oscura y blanca) |
-| `img/llengues.svg`, `img/llengues-suau.svg` | Roba de llengües: roja y blanca (dobladillos) y granate tono sobre tono (mantel de la carta). Las genera `tools/llengues.py` |
+| `tools/llengues.py` | Generador del patrón de roba de llengües (ahora no se usa en la web; queda por si se quiere recuperar) |
 | `docs/DISENO.md` | Investigación, benchmark de 20 webs y plan de diseño |
 
 ## Cambios habituales

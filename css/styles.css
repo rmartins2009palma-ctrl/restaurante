@@ -246,30 +246,12 @@ picture { display: block; }
 .taula-redona img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.8s var(--ease-out), opacity 0.7s ease; }
 
 /* -------- Mantel de llengües + carta ---------------------------------- */
-/* Mantel tono sobre tono: la roba de llengües en granate sobre granate,
-   grande y de bajo contraste para que no canse la vista en pantallas grandes.
-   Un viñeteado oscurece los laterales y deja la carta en el centro. */
+/* Fondo de la carta: liso, el mismo granate que los sopars,
+   así carta y sopars forman un único bloque sin líneas entre medias */
 .mantel {
-  position: relative;
-  background-color: #64101A;
-  background-image:
-    radial-gradient(ellipse 70% 65% at 50% 50%, transparent 30%, rgba(28, 4, 8, 0.5) 100%),
-    url("../img/llengues-suau.svg");
-  background-size: 100% 100%, 96px 264px;
-  padding: clamp(4rem, 9vw, 6.5rem) clamp(0.75rem, 4vw, 2.5rem) clamp(3rem, 8vw, 6rem);
+  background: var(--grana-fosc);
+  padding: clamp(4rem, 9vw, 6.5rem) clamp(0.75rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 3rem);
 }
-/* el dobladillo: una franja fina de la tela clásica, roja y blanca, arriba y abajo */
-.mantel::before,
-.mantel::after,
-.celler::after {
-  content: "";
-  position: absolute; left: 0; right: 0;
-  height: 10px;
-  background: url("../img/llengues.svg") 0 -83px / 64px 176px repeat-x;
-}
-.mantel::before { top: 0; }
-.mantel::after,
-.celler::after { bottom: 0; }
 
 .carta {
   max-width: 62rem;
@@ -341,7 +323,7 @@ picture { display: block; }
 .price-per { font-weight: 700; margin-top: 0.35rem; }
 
 /* -------- Es celler --------------------------------------------------- */
-.celler { position: relative; background: var(--vi); color: var(--cal); padding-block: clamp(4rem, 9vw, 7rem); }
+.celler { background: var(--vi); color: var(--cal); padding-block: clamp(4rem, 9vw, 7rem); }
 .celler-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -359,6 +341,14 @@ picture { display: block; }
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
+}
+/* Entre la bodega (oscura) y la terraza (clara) no hay fundido: el borde es limpio
+   y la foto de la terraza sube y lo pisa, como la tabla redonda en la portada */
+@media (min-width: 52.01rem) {
+  .terrassa { padding-top: clamp(2.5rem, 4vw, 3.5rem); }
+  .terrassa-grid { align-items: start; }
+  .terrassa-foto { margin-top: calc(-1 * clamp(5rem, 9vw, 8rem)); }
+  .terrassa-copy { align-self: center; }
 }
 .terrassa-copy .section-lead { color: var(--vi-suau); }
 .terrassa-quote { font-family: var(--f-display); font-size: clamp(2rem, 4vw, 2.75rem); color: var(--grana); margin: 0; }
@@ -382,7 +372,7 @@ picture { display: block; }
 
 /* -------- Transiciones entre secciones -------------------------------- */
 /* Regla: entre tonos parecidos, fundido suave; entre oscuro y claro,
-   el dobladillo de roba de llengües (portada → carta, bodega → terraza, pie).
+   borde limpio con una foto que lo pisa (portada → carta, bodega → terraza).
    Los fondos son lisos; solo el borde inferior de cada sección se funde,
    con una curva suave, en el color de la siguiente.
    El espacio extra de abajo evita que el texto quede sobre el degradado. */
@@ -404,9 +394,19 @@ picture { display: block; }
 
 /* -------- Vine a veure'ns: persiana verde ----------------------------- */
 .visita {
+  --fade: clamp(90px, 12vw, 180px);
   color: var(--cal);
-  padding-block: clamp(4rem, 9vw, 7rem);
+  padding-block: clamp(4rem, 9vw, 7rem) calc(clamp(4rem, 9vw, 7rem) + var(--fade) * 0.7);
   background:
+    /* al final, fundido suave hacia el pie */
+    linear-gradient(to bottom,
+      rgba(43, 18, 22, 0) calc(100% - var(--fade)),
+      rgba(43, 18, 22, 0.08) calc(100% - var(--fade) * 0.78),
+      rgba(43, 18, 22, 0.3) calc(100% - var(--fade) * 0.55),
+      rgba(43, 18, 22, 0.65) calc(100% - var(--fade) * 0.3),
+      rgba(43, 18, 22, 0.9) calc(100% - var(--fade) * 0.1),
+      var(--vi) 100%),
+    /* al principio, las lamas aparecen poco a poco */
     linear-gradient(to bottom, var(--persiana) 0, rgba(47, 86, 66, 0) clamp(80px, 10vw, 150px)),
     repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.13) 0 3px, rgba(255, 255, 255, 0.03) 3px 5px, transparent 5px 22px),
     var(--persiana);
@@ -453,11 +453,8 @@ address a { font-weight: 700; }
 /* -------- Pie ---------------------------------------------------------- */
 .site-footer {
   color: var(--cal);
-  padding-block: calc(2.5rem + 14px) calc(2.5rem + env(safe-area-inset-bottom));
-  /* una franja de llengües como el borde de un mantel */
-  background:
-    linear-gradient(var(--vi), var(--vi)) 0 14px / 100% 100% no-repeat,
-    url("../img/llengues.svg") 0 -81px / 64px 176px repeat-x;
+  padding-block: 2.5rem calc(2.5rem + env(safe-area-inset-bottom));
+  background: var(--vi);
 }
 .footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
 .footer-logo { height: 4.2rem; width: auto; }

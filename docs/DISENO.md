@@ -174,3 +174,13 @@ Los fondos de sección son **lisos** (sin texturas nuevas). Para evitar cortes s
   Las lamas de la persiana aparecen poco a poco. Se añade espacio abajo para que el texto no quede sobre el degradado.
 - **Entre oscuro y claro, el dobladillo** de roba de llengües (10 px): portada → carta, carta → sopars,
   bodega → terraza y persiana → pie.
+
+## 8. Fondos lisos y sin franjas (18/11/2026)
+
+A petición del cliente, **todos los fondos son lisos** y se quitan las franjas de roba de llengües
+(se veían como una línea cortada):
+- La carta va sobre **granate liso**, el mismo de los sopars: carta y sopars forman un único bloque, sin línea entre medias.
+- **Portada → carta** y **bodega → terraza** (de claro a oscuro y al revés): borde limpio que pisa una foto
+  (la tabla redonda en la portada; la foto de la terraza sube sobre la bodega en pantallas anchas).
+- **Tonos parecidos**: fundido suave (sopars → bodega, terraza → opiniones, opiniones → persiana, persiana → pie).
+- Se eliminan `img/llengues.svg` e `img/llengues-suau.svg`; el generador sigue en `tools/llengues.py`.
