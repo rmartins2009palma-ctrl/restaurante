@@ -19,8 +19,8 @@
 
   <link rel="preload" href="fonts/young-serif-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/alegreya-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/fonts.css?v=11">
-  <link rel="stylesheet" href="css/styles.css?v=11">
+  <link rel="stylesheet" href="css/fonts.css?v=12">
+  <link rel="stylesheet" href="css/styles.css?v=12">
   <script>
     /* Activa las animaciones de las fotos solo si el navegador puede y el usuario no pide menos movimiento.
        Si main.js no llegara a cargar, a los 3 s se muestra todo igualmente. */
@@ -151,7 +151,7 @@
       </div>
     </section>
 
-    <!-- SA CARTA ======================================================= -->
+    <!-- SA CARTA sobre el mantel de llengües ========================= -->
     <section class="mantel" id="carta" aria-labelledby="carta-title">
       <div class="carta">
         <header class="carta-head">
@@ -159,21 +159,89 @@
           <p data-i18n="cartaNote">La pizarra cambia según el mercado. Pregunta en la barra por el llonguet del día.</p>
         </header>
 
-        <!-- Llonguets: la especialidad, destacada y primero -->
-        <div class="carta-section carta-destacada">
-          <figure class="carta-foto foto foto-mat reveal" style="--ph:#815836">
-            <picture>
-              <source type="image/webp" srcset="img/fotos/llonguet-606.webp">
-              <img src="img/fotos/llonguet-606.jpg" width="606" height="338" loading="lazy"
-                   alt="Llonguet de carrillera abierto por la mitad, con aceitunas al lado"
-                   data-i18n-attr="alt:altLlonguet">
-            </picture>
-            <figcaption lang="ca">Llonguet de galta</figcaption>
-          </figure>
-          <h3 lang="ca">Llonguets</h3>
-          <p class="carta-especial" data-i18n="llonguetBadge">La especialidad de la casa</p>
-          <p class="carta-text" data-i18n="llonguetIntro">El panecillo de Palma de toda la vida: corteza fina que cruje y miga tierna. Lo abrimos y lo rellenamos al momento.</p>
-          <ul class="dishes dishes-2">
+        <div class="carta-section">
+          <div class="carta-intro">
+            <h3 lang="ca">Per picar</h3>
+            <p data-i18n="picarIntro">Para abrir boca con la copa en la mano.</p>
+            <figure class="carta-foto foto foto-mat reveal" style="--ph:#877757">
+              <picture>
+                <source type="image/webp" srcset="img/fotos/gildes-310.webp">
+                <img src="img/fotos/gildes-310.jpg" width="310" height="413" loading="lazy"
+                     alt="Gildas y banderillas de aceituna, anchoa, piparra y champiñón relleno con palillos de Es Racó"
+                     data-i18n-attr="alt:altGildes">
+              </picture>
+              <figcaption lang="ca">Gildes amb escuradents de sa casa</figcaption>
+            </figure>
+          </div>
+          <ul class="dishes">
+            <li class="dish">
+              <span class="dish-name" translate="no">Gildes i banderilles</span>
+              <span class="dish-desc" data-i18n="d_gildes">Aceituna, anchoa, piparra, alcachofa y champiñón relleno, pinchados en su palillo.</span>
+            </li>
+            <li class="dish">
+              <span class="dish-name" translate="no">Croquetes de pernil</span>
+              <span class="dish-desc" data-i18n="d_croquetes">Croquetas de jamón, crujientes por fuera y cremosas por dentro.</span>
+            </li>
+            <li class="dish">
+              <span class="dish-name" translate="no">Calamars a l'andalusa</span>
+              <span class="dish-desc" data-i18n="d_calamars">Calamares rebozados, con su limón.</span>
+            </li>
+            <li class="dish">
+              <span class="dish-name" translate="no">Peixet fregit</span>
+              <span class="dish-desc" data-i18n="d_peixet">Pescaíto frito.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="carta-section">
+          <div class="carta-intro">
+            <h3 lang="ca">Ses taules</h3>
+            <p data-i18n="taulesIntro">Tablas de madera para el centro de la mesa, con pan tostado, aceite, aceitunas y piparras.</p>
+            <figure class="carta-foto foto foto-mat reveal" style="--ph:#95897b">
+              <picture>
+                <source type="image/webp" srcset="img/fotos/taula-formatges-308.webp">
+                <img src="img/fotos/taula-formatges-308.jpg" width="308" height="413" loading="lazy"
+                     alt="Tabla de madera con cuñas de queso curado, pan tostado, aceite, aceitunas y piparras"
+                     data-i18n-attr="alt:altFormatges">
+              </picture>
+              <figcaption lang="ca">Taula de formatges</figcaption>
+            </figure>
+          </div>
+          <ul class="dishes">
+            <li class="dish">
+              <span class="dish-name" translate="no">Taula d'embotits i formatge</span>
+              <span class="dish-desc" data-i18n="d_taulaMixta">Jamón, queso curado, salchichón y chorizo.</span>
+            </li>
+            <li class="dish">
+              <span class="dish-name" translate="no">Taula de formatges</span>
+              <span class="dish-desc" data-i18n="d_taulaFormatges">Cuñas de queso curado y semicurado.</span>
+            </li>
+            <li class="dish">
+              <span class="dish-name" translate="no">Taula med especial</span>
+              <span class="dish-desc" data-i18n="d_taulaMed">Nuestra tabla mediterránea. Pregunta qué lleva hoy.</span>
+            </li>
+            <li class="dish">
+              <span class="dish-name" translate="no">Pa amb oli</span>
+              <span class="dish-desc" data-i18n="d_paamboli">Pan moreno, tomàtiga de ramellet, aceite y sal. Con jamón o con queso.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="carta-section">
+          <div class="carta-intro">
+            <h3 lang="ca">Llonguets</h3>
+            <p data-i18n="llonguetIntro">El panecillo de Palma de toda la vida: corteza fina que cruje y miga tierna. Lo abrimos y lo rellenamos al momento.</p>
+            <figure class="carta-foto carta-foto-wide foto foto-mat reveal" style="--ph:#815836">
+              <picture>
+                <source type="image/webp" srcset="img/fotos/llonguet-606.webp">
+                <img src="img/fotos/llonguet-606.jpg" width="606" height="338" loading="lazy"
+                     alt="Llonguet de carrillera abierto por la mitad, con aceitunas al lado"
+                     data-i18n-attr="alt:altLlonguet">
+              </picture>
+              <figcaption lang="ca">Llonguet de galta</figcaption>
+            </figure>
+          </div>
+          <ul class="dishes">
             <li class="dish">
               <span class="dish-name" translate="no">Galta</span>
               <span class="dish-desc" data-i18n="d_carrillera">Carrillera tierna y melosa.</span>
@@ -193,91 +261,26 @@
           </ul>
         </div>
 
-        <!-- Per picar y Ses taules, uno al lado del otro -->
-        <div class="carta-parell">
-          <div class="carta-section">
-            <figure class="foto foto-plat reveal" style="--ph:#877757">
-              <picture>
-                <source type="image/webp" srcset="img/fotos/gildes-310.webp">
-                <img src="img/fotos/gildes-310.jpg" width="310" height="413" loading="lazy"
-                     alt="Gildas y banderillas de aceituna, anchoa, piparra y champiñón relleno con palillos de Es Racó"
-                     data-i18n-attr="alt:altGildes">
-              </picture>
-            </figure>
-            <h3 lang="ca">Per picar</h3>
-            <p class="carta-text" data-i18n="picarIntro">Para abrir boca con la copa en la mano.</p>
-            <ul class="dishes">
-              <li class="dish">
-                <span class="dish-name" translate="no">Gildes i banderilles</span>
-                <span class="dish-desc" data-i18n="d_gildes">Aceituna, anchoa, piparra, alcachofa y champiñón relleno, pinchados en su palillo.</span>
-              </li>
-              <li class="dish">
-                <span class="dish-name" translate="no">Croquetes de pernil</span>
-                <span class="dish-desc" data-i18n="d_croquetes">Croquetas de jamón, crujientes por fuera y cremosas por dentro.</span>
-              </li>
-              <li class="dish">
-                <span class="dish-name" translate="no">Calamars a l'andalusa</span>
-                <span class="dish-desc" data-i18n="d_calamars">Calamares rebozados, con su limón.</span>
-              </li>
-              <li class="dish">
-                <span class="dish-name" translate="no">Peixet fregit</span>
-                <span class="dish-desc" data-i18n="d_peixet">Pescaíto frito.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="carta-section">
-            <figure class="foto foto-plat reveal" style="--ph:#95897b">
-              <picture>
-                <source type="image/webp" srcset="img/fotos/taula-formatges-308.webp">
-                <img src="img/fotos/taula-formatges-308.jpg" width="308" height="413" loading="lazy"
-                     alt="Tabla de madera con cuñas de queso curado, pan tostado, aceite, aceitunas y piparras"
-                     data-i18n-attr="alt:altFormatges">
-              </picture>
-            </figure>
-            <h3 lang="ca">Ses taules</h3>
-            <p class="carta-text" data-i18n="taulesIntro">Tablas de madera para el centro de la mesa, con pan tostado, aceite, aceitunas y piparras.</p>
-            <ul class="dishes">
-              <li class="dish">
-                <span class="dish-name" translate="no">Taula d'embotits i formatge</span>
-                <span class="dish-desc" data-i18n="d_taulaMixta">Jamón, queso curado, salchichón y chorizo.</span>
-              </li>
-              <li class="dish">
-                <span class="dish-name" translate="no">Taula de formatges</span>
-                <span class="dish-desc" data-i18n="d_taulaFormatges">Cuñas de queso curado y semicurado.</span>
-              </li>
-              <li class="dish">
-                <span class="dish-name" translate="no">Taula med especial</span>
-                <span class="dish-desc" data-i18n="d_taulaMed">Nuestra tabla mediterránea. Pregunta qué lleva hoy.</span>
-              </li>
-              <li class="dish">
-                <span class="dish-name" translate="no">Pa amb oli</span>
-                <span class="dish-desc" data-i18n="d_paamboli">Pan moreno, tomàtiga de ramellet, aceite y sal. Con jamón o con queso.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Ses postres -->
-        <div class="carta-section carta-postres">
-          <figure class="foto foto-plat reveal" style="--ph:#a9967f">
-            <picture>
-              <source type="image/webp" srcset="img/fotos/tartes-520.webp">
-              <img src="img/fotos/tartes-520.jpg" width="520" height="650" loading="lazy"
-                   alt="Cuatro porciones de tarta de queso: clásica con mermelada de frutos rojos, pistacho, chocolate y frutos rojos con merengue"
-                   data-i18n-attr="alt:altTartes">
-            </picture>
-          </figure>
-          <div>
+        <div class="carta-section">
+          <div class="carta-intro">
             <h3 lang="ca">Ses postres</h3>
-            <p class="carta-text" data-i18n="postresIntro">Elige tu tarta de queso o pide varias para compartir.</p>
-            <ul class="dishes">
-              <li class="dish">
-                <span class="dish-name" translate="no">Ses nostres quatre tartes de formatge</span>
-                <span class="dish-desc" data-i18n="d_tartes">Clásica con frutos rojos, pistacho, chocolate, y frutos rojos con merengue.</span>
-              </li>
-            </ul>
+            <p data-i18n="postresIntro">Elige tu tarta de queso o pide varias para compartir.</p>
+            <figure class="carta-foto foto foto-mat reveal" style="--ph:#a9967f">
+              <picture>
+                <source type="image/webp" srcset="img/fotos/tartes-520.webp">
+                <img src="img/fotos/tartes-520.jpg" width="520" height="650" loading="lazy"
+                     alt="Cuatro porciones de tarta de queso: clásica con mermelada de frutos rojos, pistacho, chocolate y frutos rojos con merengue"
+                     data-i18n-attr="alt:altTartes">
+              </picture>
+              <figcaption lang="ca">Ses quatre tartes</figcaption>
+            </figure>
           </div>
+          <ul class="dishes">
+            <li class="dish">
+              <span class="dish-name" translate="no">Ses nostres quatre tartes de formatge</span>
+              <span class="dish-desc" data-i18n="d_tartes">Clásica con frutos rojos, pistacho, chocolate, y frutos rojos con merengue.</span>
+            </li>
+          </ul>
         </div>
 
         <p class="carta-foot" data-i18n="cartaFoot">Pregunta precios y alérgenos en la barra: te contamos qué lleva cada plato.</p>
@@ -450,7 +453,7 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js?v=11" defer></script>
-  <script src="js/main.js?v=11" defer></script>
+  <script src="js/i18n.js?v=12" defer></script>
+  <script src="js/main.js?v=12" defer></script>
 </body>
 </html>

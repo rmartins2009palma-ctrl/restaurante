@@ -214,14 +214,12 @@ nunca comparten color ni se parecen (lo que antes quedaba feo era juntar tonos p
 
 Textos, botones, líneas y el foco del teclado se adaptan al fondo de cada sección.
 
-## 11. Carta rediseñada (18/11/2026)
+## 11. Carta: diseño de dos columnas, más compacta (18/11/2026)
 
-La carta tenía mucho espacio vacío (columna estrecha de foto a la izquierda y lista alineada a la izquierda).
-Ahora es **centrada, como una carta impresa**, y más compacta (de ~3.000 a ~2.360 px de alto en escritorio):
-- **Llonguets primero y destacados**: foto con paspartú, título grande, «S'especialitat de sa casa»
-  y los cuatro llonguets en dos columnas.
-- **Per picar y Ses taules** uno al lado del otro, separados por una línea fina; cada uno encabezado por su foto
-  en un **plato redondo** (como la tabla de la portada), que entra girando al aparecer.
-- **Ses postres** centrado al final, con su plato redondo.
-- Títulos más grandes en granate con una línea corta debajo; sin líneas punteadas entre platos.
-- En tablet y móvil, una sola columna centrada.
+Se probó una carta centrada con platos redondos y el cliente prefirió volver al diseño anterior
+(foto con paspartú a la izquierda, lista de platos a la derecha), pero con menos espacio vacío:
+- Fotos de la carta **apaisadas 4:3** (el llonguet mantiene su formato), para que la columna izquierda
+  no sea más alta que la lista de platos.
+- La lista de platos se **centra en vertical** con su columna.
+- Carta algo más estrecha (58rem) y menos relleno entre apartados.
+- Resultado: la carta pasa de ~2.490 a ~1.980 px de alto en escritorio.
